@@ -148,6 +148,169 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-商城项目-用户查看" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-%E7%94%A8%E6%88%B7%E6%9F%A5%E7%9C%8B/">商城项目_用户查看</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-%E7%94%A8%E6%88%B7%E6%9F%A5%E7%9C%8B/" class="archive-article-date">
+  	<time datetime="2020-10-20T11:29:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="商城项目-用户查看编写"><a href="#商城项目-用户查看编写" class="headerlink" title="商城项目_用户查看编写"></a>商城项目_用户查看编写</h1><h6 id="查看用户："><a href="#查看用户：" class="headerlink" title="查看用户："></a>查看用户：</h6><p>dao：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//查询全部用户 key words 是模糊</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;Lmonkey_User&gt; <span class="title">selectAll</span><span class="params">(<span class="keyword">int</span> cpage ,<span class="keyword">int</span> count,String keywords)</span>  </span>&#123;</span><br><span class="line">        ArrayList&lt;Lmonkey_User&gt; list = <span class="keyword">new</span> ArrayList&lt;Lmonkey_User&gt;();</span><br><span class="line">        <span class="comment">//声明结果集</span></span><br><span class="line">        ResultSet rs = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//获取连接对象</span></span><br><span class="line">        Connection conn = BaseDao.getconn();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//PreparedStatement：表示预编译的 SQL 语句的对象。</span></span><br><span class="line">        PreparedStatement ps = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line"></span><br><span class="line">            String sql = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(keywords!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                sql=<span class="string">&quot;select0 * from LMONKEY_USER where USER_NAME like ? order by USER_BIRTHDAY desc limit ?,?&quot;</span>;</span><br><span class="line"></span><br><span class="line">                ps = conn.prepareStatement(sql);</span><br><span class="line"></span><br><span class="line">                ps.setString(<span class="number">1</span>,<span class="string">&quot;%&quot;</span>+keywords+<span class="string">&quot;%&quot;</span>);</span><br><span class="line">                <span class="comment">//分页逻辑</span></span><br><span class="line">                ps.setInt(<span class="number">2</span>,(cpage-<span class="number">1</span>)*count);</span><br><span class="line">                ps.setInt(<span class="number">3</span>,count);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                sql = <span class="string">&quot;select * from LMONKEY_USER order by USER_BIRTHDAY desc limit ?,?&quot;</span>;</span><br><span class="line"></span><br><span class="line">                ps = conn.prepareStatement(sql);</span><br><span class="line">                ps.setInt(<span class="number">1</span>,(cpage-<span class="number">1</span>)*count);</span><br><span class="line">                ps.setInt(<span class="number">2</span>,count);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//拿到数据放入到结果集中</span></span><br><span class="line">            rs = ps.executeQuery();</span><br><span class="line">            <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">                Lmonkey_User user = <span class="keyword">new</span> Lmonkey_User(</span><br><span class="line">                        rs.getString(<span class="string">&quot;USER_ID&quot;</span>),</span><br><span class="line">                        rs.getString(<span class="string">&quot;USER_NAME&quot;</span>),</span><br><span class="line">                        rs.getString(<span class="string">&quot;USER_PASSWORD&quot;</span>),</span><br><span class="line">                        rs.getString(<span class="string">&quot;USER_SEX&quot;</span>),</span><br><span class="line">                        rs.getString(<span class="string">&quot;USER_BIRTHDAY&quot;</span>),</span><br><span class="line">                        rs.getString(<span class="string">&quot;USER_IDENITY_CODE&quot;</span>),</span><br><span class="line">                        rs.getString(<span class="string">&quot;USER_EMAIL&quot;</span>),</span><br><span class="line">                        rs.getString(<span class="string">&quot;USER_MOBILE&quot;</span>),</span><br><span class="line">                        rs.getString(<span class="string">&quot;USER_ADDRESS&quot;</span>),</span><br><span class="line">                        rs.getInt(<span class="string">&quot;USER_STATUS&quot;</span>)</span><br><span class="line"></span><br><span class="line">                );</span><br><span class="line">                list.add(user);</span><br><span class="line"><span class="comment">//                System.out.println(list);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (SQLException e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            BaseDao.closeAll(rs,ps,conn);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>admin_user.jsp：(使用EL表达式 ，遍历拿值)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:forEach <span class="keyword">var</span>=<span class="string">&quot;u&quot;</span> items=<span class="string">&quot;$&#123;userlist&#125;&quot;</span>&gt;</span><br><span class="line">                  &lt;tr&gt;</span><br><span class="line">                      &lt;td class=&quot;tc&quot;&gt;&lt;input name=&quot;id[]&quot; value=&quot;$&#123;u.USER_ID&#125;&quot; type=&quot;checkbox&quot;&gt;&lt;/td&gt;</span><br><span class="line">                      &lt;td&gt; $&#123;u.USER_ID&#125;&lt;/td&gt;</span><br><span class="line">                      &lt;td&gt; $&#123;u.USER_NAME&#125;&lt;/td&gt;</span><br><span class="line">                      &lt;td&gt; $&#123;u.USER_SEX==&#x27;T&#x27;?&#x27;男&#x27;:&#x27;女&#x27;&#125;&lt;/td&gt;</span><br><span class="line">                      &lt;td&gt; $&#123;u.USER_EMAIL&#125;&lt;/td&gt;</span><br><span class="line">                      &lt;td&gt; $&#123;u.USER_MOBILE&#125;</span><br><span class="line">                      &lt;/td&gt;</span><br><span class="line">                  &lt;/tr&gt;</span><br><span class="line">              &lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>获取分页数和总数：</p>
+<p>注意：</p>
+<p>​    先判断搜索栏中有没有输入 ，如有输入则进行if中 ，进行模糊查询；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取总记录和总页数</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] totalPage(<span class="keyword">int</span> count,String keywords)&#123;</span><br><span class="line">       <span class="keyword">int</span> arr[] = &#123;<span class="number">0</span>,<span class="number">1</span>&#125;;  <span class="comment">// 0 总记录数 ，1 页数</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">//连接数据库</span></span><br><span class="line">       Connection conn = BaseDao.getconn();</span><br><span class="line">       PreparedStatement ps = <span class="keyword">null</span>;</span><br><span class="line">       ResultSet rs = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">try</span>&#123;</span><br><span class="line">           String sql = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">if</span>(keywords!=<span class="keyword">null</span>)&#123;</span><br><span class="line">               sql = <span class="string">&quot;select count(*) from LMONKEY_USER where USER_NAME like ?&quot;</span>;</span><br><span class="line">               ps = conn.prepareStatement(sql);</span><br><span class="line">               ps.setString(<span class="number">1</span>,<span class="string">&quot;%&quot;</span>+keywords+<span class="string">&quot;%&quot;</span>);</span><br><span class="line"></span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               sql = <span class="string">&quot;select count(*) from LMONKEY_USER&quot;</span>;</span><br><span class="line">               ps = conn.prepareStatement(sql);</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line">           rs = ps.executeQuery();</span><br><span class="line">           <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">               <span class="comment">//总记录数</span></span><br><span class="line">               arr[<span class="number">0</span>] = rs.getInt(<span class="number">1</span>);</span><br><span class="line">               <span class="comment">//页数 = 总数量 / 当前的个数 (总页数)</span></span><br><span class="line">               <span class="keyword">if</span>(arr[<span class="number">0</span>]%count==<span class="number">0</span>)&#123;</span><br><span class="line">                   arr[<span class="number">1</span>] = arr[<span class="number">0</span>]/count;</span><br><span class="line">               &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                   arr[<span class="number">1</span>] = arr[<span class="number">0</span>]/count+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;<span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">           BaseDao.closeAll(rs,ps,conn);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> arr;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>service调用dao：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> cpage = <span class="number">1</span>; <span class="comment">//当前页</span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">5</span>; <span class="comment">//每页显示条数</span></span><br><span class="line">        <span class="comment">//获取用户指定页面</span></span><br><span class="line">        <span class="comment">//String cp = request.getParameter(&quot;cp&quot;);</span></span><br><span class="line">        <span class="comment">//接收用户搜索得到关键字</span></span><br><span class="line">        String keyword = request.getParameter(<span class="string">&quot;keywords&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//if(cp!=null)&#123;</span></span><br><span class="line">        <span class="comment">//    cpage = Integer.parseInt(cp);</span></span><br><span class="line">        <span class="comment">//&#125;</span></span><br><span class="line">        <span class="keyword">int</span> arr[] = Lmonkey_UserDao.totalPage(count,keyword);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取数据库的用户总人数</span></span><br><span class="line">        ArrayList&lt;Lmonkey_User&gt; list = Lmonkey_UserDao.selectAll(cpage,count,keyword);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//放到请求对象中 放入request域中</span></span><br><span class="line">        request.setAttribute(<span class="string">&quot;userlist&quot;</span>,list);</span><br><span class="line">        request.setAttribute(<span class="string">&quot;tsum&quot;</span>,arr[<span class="number">0</span>]);</span><br><span class="line">        request.setAttribute(<span class="string">&quot;tpage&quot;</span>,arr[<span class="number">1</span>]);</span><br><span class="line">        request.setAttribute(<span class="string">&quot;cpage&quot;</span>,cpage);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 查询功能</span></span><br><span class="line"><span class="comment">        * 在查询后 点击下一页 或 上一页 跳转回未查询的页面</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        <span class="keyword">if</span>(keyword != <span class="keyword">null</span>)&#123;</span><br><span class="line">            request.setAttribute(<span class="string">&quot;searchParams&quot;</span>,<span class="string">&quot;&amp;keywords=&quot;</span>+keyword);</span><br><span class="line">        &#125;</span><br><span class="line">        request.getRequestDispatcher(<span class="string">&quot;admin_user.jsp&quot;</span>).forward(request,response);</span><br><span class="line"><span class="comment">//        System.out.println(list);</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>问题：在搜索栏中输入之后参数并没有保存 </p>
+<p>解决：在前台jsp中用EL表达式，获取当前正在查询的参数</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">th</span> <span class="attr">width</span>=<span class="string">&quot;70&quot;</span>&gt;</span>关键字:<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;common-text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;关键字&quot;</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;param.keywords&#125;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-primary btn2&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sub&quot;</span> <span class="attr">value</span>=<span class="string">&quot;查询&quot;</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>问题：</p>
+<p>解决：    在分页时 搜索之后 点击上一页或下一页 会直接返回到没有搜索的状态</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 查询功能</span></span><br><span class="line"><span class="comment">* 在查询后 点击下一页 或 上一页 跳转回未查询的页面</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="keyword">if</span>(keyword != <span class="keyword">null</span>)&#123;</span><br><span class="line">    request.setAttribute(<span class="string">&quot;searchParams&quot;</span>,<span class="string">&quot;&amp;keywords=&quot;</span>+keyword);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判断是否为空，不为空直接把值通过EL传给前台jsp</p>
+<p>admin_user.jsp：(分页)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--                    分页--%&gt;</span><br><span class="line">                    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;list-page&quot;</span>&gt;</span><br><span class="line">                        共有$&#123;tsum&#125;条记录，当前$&#123;cpage&#125;/$&#123;tpage&#125;页</span><br><span class="line">                        &lt;a href=&quot;admin_douserselect?cp=1$&#123;searchParams&#125;&quot;&gt;首页&lt;/a&gt;</span><br><span class="line">                        &lt;a href=&quot;admin_douserselect?cp=$&#123;cpage-1&lt;1?1:cpage-1&#125;$&#123;searchParams&#125;&quot;&gt;上一页&lt;/a&gt;</span><br><span class="line">                        &lt;a href=&quot;admin_douserselect?cp=$&#123;cpage+1&gt;tpage?tpage:cpage+1&#125;$&#123;searchParams&#125;&quot;&gt;下一页&lt;/a&gt;</span><br><span class="line">                        &lt;a href=&quot;admin_douserselect?cp=$&#123;tpage&#125;$&#123;searchParams&#125;&quot;&gt;尾页&lt;/a&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-%E7%94%A8%E6%88%B7%E6%9F%A5%E7%9C%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-商城项目_用户添加" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/">商城项目_用户添加</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/" class="archive-article-date">
+  	<time datetime="2020-10-20T09:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="商城项目-用户模块编写"><a href="#商城项目-用户模块编写" class="headerlink" title="商城项目_用户模块编写"></a>商城项目_用户模块编写</h1><h6 id="增加用户："><a href="#增加用户：" class="headerlink" title="增加用户："></a>增加用户：</h6><p>dao：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增加用户</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">insertUser</span><span class="params">(Lmonkey_User user)</span>  </span>&#123;</span><br><span class="line">    String sql = <span class="string">&quot;insert into LMONKEY_USER values(?, ?, ?, ?, DATE_FORMAT(?, &#x27;%Y-%m-%d&#x27;), ?, ?, ?, ?, ?)&quot;</span>;</span><br><span class="line">    Object[] params=&#123;</span><br><span class="line">            user.getUSER_ID(),</span><br><span class="line">            user.getUSER_NAME(),</span><br><span class="line">            user.getUSER_PASSWORD(),</span><br><span class="line">            user.getUSER_SEX(),</span><br><span class="line">            user.getUSER_BIRTHDAY(),</span><br><span class="line">            user.getUSER_IDENITY_CODE(),</span><br><span class="line">            user.getUSER_EMAIL(),</span><br><span class="line">            user.getUSER_MOBILE(),</span><br><span class="line">            user.getUSER_ADDRESS(),</span><br><span class="line">            user.getUSER_STATUS() &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> BaseDao.exectuIUD(sql,params);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>service调用dao：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//创建用户实体</span></span><br><span class="line">        Lmonkey_User user = <span class="keyword">new</span> Lmonkey_User(username,name,pwd,sex,year,<span class="keyword">null</span>,email,mobile,address,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//加入到数据库中 执行成功返回执行数</span></span><br><span class="line">        <span class="keyword">int</span> count = Lmonkey_UserDao.insertUser(user);</span><br><span class="line"><span class="comment">//        System.out.println(user);</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//成功或失败重定向到哪里</span></span><br><span class="line">        <span class="keyword">if</span>(count&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            response.sendRedirect(<span class="string">&quot;admin_douserselect&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//输出流 告诉前台页面</span></span><br><span class="line">            PrintWriter out = response.getWriter();</span><br><span class="line">            out.write(<span class="string">&quot;&lt;script&gt;&quot;</span>);</span><br><span class="line">            out.write(<span class="string">&quot;aler(‘用户添加失败’)&quot;</span>);</span><br><span class="line">            out.write(<span class="string">&quot;location.href=&#x27;manage/admin_user.jsp&#x27;&quot;</span>);</span><br><span class="line">            out.write(<span class="string">&quot;&lt;/script&gt;&quot;</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：JSP页面的标签返回值路径</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="w-SpringMVC-入门" class="article article-type-w  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
