@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Disembark</title>
+  <title>Java 工具类类_验证码 | Disembark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: Spring MVCdate: 2020-10-17 20:58:49 ant 风格的请求路径">
+  <meta name="description" content="验证码生成工具类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Disembark">
-<meta property="og:url" content="http://example.com/2020/10/17/SpringMVC-ant%E9%A3%8E%E6%A0%BC/index.html">
+<meta property="og:title" content="Java 工具类类_验证码">
+<meta property="og:url" content="http://example.com/2020/10/28/Java-%E5%B7%A5%E5%85%B7%E7%B1%BB-%E9%AA%8C%E8%AF%81%E7%A0%81/index.html">
 <meta property="og:site_name" content="Disembark">
-<meta property="og:description" content="title: Spring MVCdate: 2020-10-17 20:58:49 ant 风格的请求路径">
+<meta property="og:description" content="验证码生成工具类">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-10-17T12:58:49.396Z">
-<meta property="article:modified_time" content="2020-10-20T15:20:45.327Z">
+<meta property="article:published_time" content="2020-10-28T11:00:33.000Z">
+<meta property="article:modified_time" content="2020-10-28T11:08:16.196Z">
 <meta property="article:author" content="zc">
+<meta property="article:tag" content="Java_util">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Disembark" type="application/atom+xml">
@@ -153,43 +154,34 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-SpringMVC-ant风格" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-Java-工具类-验证码" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java 工具类类_验证码
+    </h1>
+  
+
+        
+        <a href="/2020/10/28/Java-%E5%B7%A5%E5%85%B7%E7%B1%BB-%E9%AA%8C%E8%AF%81%E7%A0%81/" class="archive-article-date">
+  	<time datetime="2020-10-28T11:00:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-28</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title: Spring MVC<br>date: 2020-10-17 20:58:49</p>
-<p><strong>ant 风格的请求路径</strong></p>
-<a id="more"></a>
+        <h1 id="验证码生成工具类"><a href="#验证码生成工具类" class="headerlink" title="验证码生成工具类"></a>验证码生成工具类</h1><a id="more"></a>
 
-<p>通配符：    </p>
-<p>​    ？ 单字符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value &#x3D; &quot;welcome5&#x2F;a?c&#x2F;test&quot;)</span><br><span class="line">public String welcome5()&#123;</span><br><span class="line">    return &quot;sussecc&quot;; &#x2F;&#x2F;默认是用请求转发</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Java：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.zhangchen.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> java.awt.Font;</span><br><span class="line"><span class="keyword">import</span> java.awt.Graphics;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.BufferedImage;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.RenderedImage;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.imageio.ImageIO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> width = <span class="number">100</span>;<span class="comment">// 定义图片的width</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> height = <span class="number">25</span>;<span class="comment">// 定义图片的height</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> codeCount = <span class="number">4</span>;<span class="comment">// 定义图片上显示验证码的个数</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> xx = <span class="number">15</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> fontHeight = <span class="number">18</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span>  <span class="keyword">int</span> codeY = <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">char</span>[] codeSequence = &#123; <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;J&#x27;</span>, <span class="string">&#x27;K&#x27;</span>, <span class="string">&#x27;L&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="string">&#x27;N&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;P&#x27;</span>, <span class="string">&#x27;Q&#x27;</span>, <span class="string">&#x27;R&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;S&#x27;</span>, <span class="string">&#x27;T&#x27;</span>, <span class="string">&#x27;U&#x27;</span>, <span class="string">&#x27;V&#x27;</span>, <span class="string">&#x27;W&#x27;</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;Z&#x27;</span>, <span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>, <span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;6&#x27;</span>, <span class="string">&#x27;7&#x27;</span>, <span class="string">&#x27;8&#x27;</span>, <span class="string">&#x27;9&#x27;</span> &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成一个map集合</span></span><br><span class="line"><span class="comment">     * code为生成的验证码</span></span><br><span class="line"><span class="comment">     * codePic为生成的验证码BufferedImage对象</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String,Object&gt; <span class="title">generateCodeAndPic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 定义图像buffer</span></span><br><span class="line">        BufferedImage buffImg = <span class="keyword">new</span> BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);</span><br><span class="line">        <span class="comment">// Graphics2D gd = buffImg.createGraphics();</span></span><br><span class="line">        <span class="comment">// Graphics2D gd = (Graphics2D) buffImg.getGraphics();</span></span><br><span class="line">        Graphics gd = buffImg.getGraphics();</span><br><span class="line">        <span class="comment">// 创建一个随机数生成器类</span></span><br><span class="line">        Random random = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="comment">// 将图像填充为白色</span></span><br><span class="line">        gd.setColor(Color.WHITE);</span><br><span class="line">        gd.fillRect(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建字体，字体的大小应该根据图片的高度来定。</span></span><br><span class="line">        Font font = <span class="keyword">new</span> Font(<span class="string">&quot;Fixedsys&quot;</span>, Font.BOLD, fontHeight);</span><br><span class="line">        <span class="comment">// 设置字体。</span></span><br><span class="line">        gd.setFont(font);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 画边框。</span></span><br><span class="line">        gd.setColor(Color.BLACK);</span><br><span class="line">        gd.drawRect(<span class="number">0</span>, <span class="number">0</span>, width - <span class="number">1</span>, height - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 随机产生40条干扰线，使图象中的认证码不易被其它程序探测到。</span></span><br><span class="line">        gd.setColor(Color.BLACK);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">30</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = random.nextInt(width);</span><br><span class="line">            <span class="keyword">int</span> y = random.nextInt(height);</span><br><span class="line">            <span class="keyword">int</span> xl = random.nextInt(<span class="number">12</span>);</span><br><span class="line">            <span class="keyword">int</span> yl = random.nextInt(<span class="number">12</span>);</span><br><span class="line">            gd.drawLine(x, y, x + xl, y + yl);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// randomCode用于保存随机产生的验证码，以便用户登录后进行验证。</span></span><br><span class="line">        StringBuffer randomCode = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">int</span> red = <span class="number">0</span>, green = <span class="number">0</span>, blue = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 随机产生codeCount数字的验证码。</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; codeCount; i++) &#123;</span><br><span class="line">            <span class="comment">// 得到随机产生的验证码数字。</span></span><br><span class="line">            String code = String.valueOf(codeSequence[random.nextInt(<span class="number">36</span>)]);</span><br><span class="line">            <span class="comment">// 产生随机的颜色分量来构造颜色值，这样输出的每位数字的颜色值都将不同。</span></span><br><span class="line">            red = random.nextInt(<span class="number">255</span>);</span><br><span class="line">            green = random.nextInt(<span class="number">255</span>);</span><br><span class="line">            blue = random.nextInt(<span class="number">255</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 用随机产生的颜色将验证码绘制到图像中。</span></span><br><span class="line">            gd.setColor(<span class="keyword">new</span> Color(red, green, blue));</span><br><span class="line">            gd.drawString(code, (i + <span class="number">1</span>) * xx, codeY);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将产生的四个随机数组合在一起。</span></span><br><span class="line">            randomCode.append(code);</span><br><span class="line">        &#125;</span><br><span class="line">        Map&lt;String,Object&gt; map  =<span class="keyword">new</span> HashMap&lt;String,Object&gt;();</span><br><span class="line">        <span class="comment">//存放验证码</span></span><br><span class="line">        map.put(<span class="string">&quot;code&quot;</span>, randomCode);</span><br><span class="line">        <span class="comment">//存放生成的验证码BufferedImage对象</span></span><br><span class="line">        map.put(<span class="string">&quot;codePic&quot;</span>, buffImg);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;hanler&#x2F;welcome5&#x2F;axc&#x2F;test&quot;&gt;单个字符&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+<p>Servlet：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.zhangchen.servlet.user;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.image.RenderedImage;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.imageio.ImageIO;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletOutputStream;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpSession;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.zhangchen.util.CodeUtil;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Servlet implementation class CodeServlet</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@WebServlet(&quot;/getcode&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 调用工具类生成的验证码和验证码图片</span></span><br><span class="line">        Map&lt;String, Object&gt; codeMap = CodeUtil.generateCodeAndPic();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将四位数字的验证码保存到Session中。</span></span><br><span class="line">        HttpSession session = req.getSession();</span><br><span class="line">        session.setAttribute(<span class="string">&quot;code&quot;</span>, codeMap.get(<span class="string">&quot;code&quot;</span>).toString());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 禁止图像缓存。</span></span><br><span class="line">        resp.setHeader(<span class="string">&quot;Pragma&quot;</span>, <span class="string">&quot;no-cache&quot;</span>);</span><br><span class="line">        resp.setHeader(<span class="string">&quot;Cache-Control&quot;</span>, <span class="string">&quot;no-cache&quot;</span>);</span><br><span class="line">        resp.setDateHeader(<span class="string">&quot;Expires&quot;</span>, -<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        resp.setContentType(<span class="string">&quot;image/jpeg&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将图像输出到Servlet输出流中。</span></span><br><span class="line">        ServletOutputStream sos;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            sos = resp.getOutputStream();</span><br><span class="line">            ImageIO.write((RenderedImage) codeMap.get(<span class="string">&quot;codePic&quot;</span>), <span class="string">&quot;jpeg&quot;</span>, sos);</span><br><span class="line">            sos.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>​    *任意个字符(0个或者多个)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value &#x3D; &quot;welcome3&#x2F;*&#x2F;test&quot;)</span><br><span class="line">public String welcome3()&#123;</span><br><span class="line">    return &quot;sussecc&quot;; &#x2F;&#x2F;默认是用请求转发</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;hanler&#x2F;welcome3&#x2F;dawda&#x2F;test&quot;&gt; welcome-fist&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
-
-<p>​    **任意目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value &#x3D; &quot;welcome4&#x2F;**&#x2F;test&quot;)</span><br><span class="line">public String welcome4()&#123;</span><br><span class="line">    return &quot;sussecc&quot;; &#x2F;&#x2F;默认是用请求转发</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;hanler&#x2F;welcome4&#x2F;abc&#x2F;dea&#x2F;aaa&#x2F;ccc&#x2F;test&quot;&gt; 任意目录&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
-
-<p>​        </p>
-<p>基于ant通过获取动态参数：</p>
-<p>​    第一步：</p>
-<p>​        前端传入值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;hanler&#x2F;welcome6&#x2F;zs&quot;&gt;传值&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
-
-<p>​    第二步：</p>
-<p>​        name 拿值 通过 <em>@PathVariable</em> 的name ，返回给注解的修饰词</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value &#x3D; &quot;welcome6&#x2F;&#123;name&#125;&quot;)</span><br><span class="line">public String welcome6(@PathVariable(&quot;name&quot;)String name)&#123;</span><br><span class="line">    System.out.println(name);</span><br><span class="line">    return &quot;sussecc&quot;; &#x2F;&#x2F;默认是用请求转发</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：@RequestMapping 注解 和 @PathVariable </p>
 
       
 
@@ -219,6 +211,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java_util</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -269,7 +272,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/17/SpringMVC-ant%E9%A3%8E%E6%A0%BC/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/28/Java-%E5%B7%A5%E5%85%B7%E7%B1%BB-%E9%AA%8C%E8%AF%81%E7%A0%81/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +286,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/18/SpringMVC-%E5%85%A5%E9%97%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          SpringMVC-配置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%AD%A3%E5%BC%8F%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的第一篇正式文章</div>
+    <a href="/2020/10/22/Spring_%E5%9F%BA%E7%A1%8003/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring_IOC02</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -321,7 +315,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E7%A0%81%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">验证码生成工具类</span></a></li></ol>
                     </div>
                 </span>
             </div>
