@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Disembark</title>
+  <title>SpringMVC-处理模型数据 | Disembark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Disembark">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="SpringMVC处理模型数据如果跳转时需要带入数据：V、M则可以使用以下方式：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringMVC-处理模型数据">
+<meta property="og:url" content="http://example.com/2020/11/02/SpringMVC-%E5%A4%84%E7%90%86%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE/index.html">
 <meta property="og:site_name" content="Disembark">
+<meta property="og:description" content="SpringMVC处理模型数据如果跳转时需要带入数据：V、M则可以使用以下方式：">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-11-02T12:40:11.000Z">
+<meta property="article:modified_time" content="2020-11-02T12:59:37.048Z">
 <meta property="article:author" content="zc">
+<meta property="article:tag" content="Spring MVC">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Disembark" type="application/atom+xml">
@@ -149,35 +154,65 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-SpringMVC-处理模型数据" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      SpringMVC-处理模型数据
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/02/SpringMVC-%E5%A4%84%E7%90%86%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE/" class="archive-article-date">
+
+        
+        <a href="/2020/11/02/SpringMVC-%E5%A4%84%E7%90%86%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE/" class="archive-article-date">
   	<time datetime="2020-11-02T12:40:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/02/SpringMVC-%E5%A4%84%E7%90%86%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE/">SpringMVC-处理模型数据</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SpringMVC处理模型数据"><a href="#SpringMVC处理模型数据" class="headerlink" title="SpringMVC处理模型数据"></a>SpringMVC处理模型数据</h1><p>如果跳转时需要带入数据：V、M则可以使用以下方式：</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<p>ModelAndView（模型加视图）、ModelMap 、Map、Model（模型）   -数据放在了<strong>request作用域</strong></p>
+<p><strong>注意是request作用域</strong></p>
+<h4 id="ModelAndView（模型加视图）："><a href="#ModelAndView（模型加视图）：" class="headerlink" title="ModelAndView（模型加视图）："></a>ModelAndView（模型加视图）：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跳转时带入参数ModelAndView</span></span><br><span class="line"><span class="meta">@RequestMapping(value = &quot;testModelAndView&quot;)</span> <span class="comment">//ModelAndView 既有数据又有视图</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> ModelAndView <span class="title">modelAndView</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ModelAndView mv = <span class="keyword">new</span> ModelAndView(<span class="string">&quot;sueecss&quot;</span>);</span><br><span class="line">    Student student = <span class="keyword">new</span> Student();</span><br><span class="line">    student.setId(<span class="number">2</span>);</span><br><span class="line">    student.setName(<span class="string">&quot;zs&quot;</span>);</span><br><span class="line">    mv.addObject(<span class="string">&quot;student&quot;</span>,student);</span><br><span class="line">    <span class="keyword">return</span> mv;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：ModelAndView 返回值是 ModelAndView；</p>
+<p>​            ModelAndView mv = new ModelAndView(“sueecss”);需要在参数中添加跳转路径；</p>
+<p>​            </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -189,306 +224,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/02/SpringMVC-%E5%A4%84%E7%90%86%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/28/Java-%E5%B7%A5%E5%85%B7%E7%B1%BB-%E9%AA%8C%E8%AF%81%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2020-10-28T11:00:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/28/Java-%E5%B7%A5%E5%85%B7%E7%B1%BB-%E9%AA%8C%E8%AF%81%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 工具类类_验证码</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/28/Java-%E5%B7%A5%E5%85%B7%E7%B1%BB-%E9%AA%8C%E8%AF%81%E7%A0%81/">Java 工具类类_验证码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java_util</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringMVC%E5%A4%84%E7%90%86%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="toc-number">1.</span> <span class="toc-text">SpringMVC处理模型数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ModelAndView%EF%BC%88%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%A7%86%E5%9B%BE%EF%BC%89%EF%BC%9A"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">ModelAndView（模型加视图）：</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/22/Spring_%E5%9F%BA%E7%A1%8003/" class="archive-article-date">
-  	<time datetime="2020-10-22T14:48:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-22</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/22/Spring_%E5%9F%BA%E7%A1%8003/">Spring_IOC02</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/20/Spring_%E5%9F%BA%E7%A1%8002/" class="archive-article-date">
-  	<time datetime="2020-10-20T15:42:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/20/Spring_%E5%9F%BA%E7%A1%8002/">Spring_IOC</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/20/Spring-%E5%9F%BA%E7%A1%8001/" class="archive-article-date">
-  	<time datetime="2020-10-20T15:29:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/20/Spring-%E5%9F%BA%E7%A1%8001/">Spring_基础01</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-%E7%94%A8%E6%88%B7%E6%9F%A5%E7%9C%8B/" class="archive-article-date">
-  	<time datetime="2020-10-20T11:29:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-%E7%94%A8%E6%88%B7%E6%9F%A5%E7%9C%8B/">商城项目_用户查看</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web项目</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/" class="archive-article-date">
-  	<time datetime="2020-10-20T09:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/">商城项目_用户添加</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web项目</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-w">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/18/SpringMVC-%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2020-10-18T13:17:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/18/SpringMVC-%E5%85%A5%E9%97%A8/">SpringMVC-配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spring MVC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/SpringMVC-ant%E9%A3%8E%E6%A0%BC/" class="archive-article-date">
-  	<time datetime="2020-10-17T12:58:49.396Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -511,8 +359,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
