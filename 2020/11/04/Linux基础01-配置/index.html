@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: web项目 | Disembark</title>
+  <title>Linux安装配置 | Disembark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Disembark">
-<meta property="og:url" content="http://example.com/tags/web%E9%A1%B9%E7%9B%AE/index.html">
+  <meta name="description" content="Linux 安装步骤：1.下载linux:发行版 Ubuntu  REdHat centos Debain Fedora,SUSE,OpenSUSE centos 6.xcentos 7.x 在虚拟机(VmWare)上 安装linux(centos6.5&#x2F;6.8)centos：CentOS-6.8-x86_64-bin-DVD1.iso  ，http:&#x2F;&#x2F;archive.kernel.org&#x2F;ce">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux安装配置">
+<meta property="og:url" content="http://example.com/2020/11/04/Linux%E5%9F%BA%E7%A1%8001-%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Disembark">
+<meta property="og:description" content="Linux 安装步骤：1.下载linux:发行版 Ubuntu  REdHat centos Debain Fedora,SUSE,OpenSUSE centos 6.xcentos 7.x 在虚拟机(VmWare)上 安装linux(centos6.5&#x2F;6.8)centos：CentOS-6.8-x86_64-bin-DVD1.iso  ，http:&#x2F;&#x2F;archive.kernel.org&#x2F;ce">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-11-04T15:30:39.000Z">
+<meta property="article:modified_time" content="2020-11-04T15:33:52.122Z">
 <meta property="article:author" content="zc">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Disembark" type="application/atom+xml">
@@ -149,97 +154,201 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="w-Linux基础01-配置" class="article article-type-w " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-%E7%94%A8%E6%88%B7%E6%9F%A5%E7%9C%8B/" class="archive-article-date">
-  	<time datetime="2020-10-20T11:29:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-%E7%94%A8%E6%88%B7%E6%9F%A5%E7%9C%8B/">商城项目_用户查看</a>
+    <h1 class="article-title" itemprop="name">
+      Linux安装配置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/11/04/Linux%E5%9F%BA%E7%A1%8001-%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-11-04T15:30:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux-安装步骤："><a href="#Linux-安装步骤：" class="headerlink" title="Linux 安装步骤："></a>Linux 安装步骤：</h1><h4 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h4><p>linux:发行版 Ubuntu  REdHat centos Debain Fedora,SUSE,OpenSUSE</p>
+<p>centos 6.x<br>centos 7.x</p>
+<p>在虚拟机(VmWare)上 安装linux(centos6.5/6.8)<br>centos：CentOS-6.8-x86_64-bin-DVD1.iso  ，<a target="_blank" rel="noopener" href="http://archive.kernel.org/centos-vault/6.8/isos/x86_64/CentOS-6.8-x86_64-bin-DVD1.iso">http://archive.kernel.org/centos-vault/6.8/isos/x86_64/CentOS-6.8-x86_64-bin-DVD1.iso</a></p>
+<a id="more"></a>
+
+<p>vmware<br>VMware Workstation v12 for Windows </p>
+<!--more-->
+
+<h4 id="2-在windows上安装centos-linux"><a href="#2-在windows上安装centos-linux" class="headerlink" title="2.在windows上安装centos(linux)"></a>2.在windows上安装centos(linux)</h4><p>​    买电脑（硬件）：文件-新建虚拟机<br>​    装系统：在“买电脑”里装centos:编辑虚拟机设置-CD/DVD中 指定 centos的文件位置 - 开启：<br>​    如果报错：Intel vt-x禁用…，愿意是 真实物理机没有开发 虚拟化设置。<br>​    解决：进入bios(如何进入，自己搜)，找到 intel VItural TEchnology ：Enable</p>
+<p>关于vmware中 计算机名字：<br>    虚拟机名：bigdata01<br>    计算机名：bigdata01<br>    网络中的名字：bigdata01<br>    用户名：root</p>
+<p>默认超级管理员：root/自己设置</p>
+<p>磁盘布局：<br>    /boot：系统启动时 需要的内存 200M<br>    /：系统的可用磁盘大小 10240M<br>    swap:交换内存 ，建议大小 和内存一致  2048M</p>
+<p>鼠标从虚拟机中释放：ctrl+alt</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web项目</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/04/Linux%E5%9F%BA%E7%A1%8001-%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/" class="archive-article-date">
-  	<time datetime="2020-10-20T09:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/11/04/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Linux基础命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/02/SpringMVC-%E5%A4%84%E7%90%86%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringMVC-处理模型数据</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/">商城项目_用户添加</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web项目</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">Linux 安装步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1.下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%9C%A8windows%E4%B8%8A%E5%AE%89%E8%A3%85centos-linux"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">2.在windows上安装centos(linux)</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -262,9 +371,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
