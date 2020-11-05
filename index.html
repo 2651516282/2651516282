@@ -150,6 +150,269 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux网络搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/">Linux网络搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+  	<time datetime="2020-11-05T15:43:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="centos网络配置"><a href="#centos网络配置" class="headerlink" title="centos网络配置"></a>centos网络配置</h1><p>​    bigdata01:    192.168.2.128        192.168.2.1（网关）网关全部一致<br>​    bigdata02    192.168.2.129        192.168.2.1（网关）<br>​    bigdata03    192.168.2.130        192.168.2.1（网关）</p>
+<h2 id="a-编辑-虚拟机网络编辑器"><a href="#a-编辑-虚拟机网络编辑器" class="headerlink" title="a.编辑-虚拟机网络编辑器"></a>a.编辑-虚拟机网络编辑器</h2><h4 id="VMNet8-NAT"><a href="#VMNet8-NAT" class="headerlink" title="VMNet8 (NAT)"></a>VMNet8 (NAT)</h4><p>i.子网 192.168.2.0<br>ii.更改设置-DHCP设置 ：<br>    起始192.168.2.128    bigdata01<br>    结束192.168.2.254<br>iii.NAT设置：网关 192.168.2.1</p>
+<h4 id="b-配置windows访问虚拟机"><a href="#b-配置windows访问虚拟机" class="headerlink" title="b.配置windows访问虚拟机"></a>b.配置windows访问虚拟机</h4><p>网络连接-vmNet8-TCP/IP V4 - IP192.168.2.2 ， 192.168.2.1（网关）</p>
+<h4 id="c-centos网卡"><a href="#c-centos网卡" class="headerlink" title="c.centos网卡"></a>c.centos网卡</h4><p>修改网卡配置 vi /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<p>DEVICE=eth0<br>HWADDR=00:0C:29:68:B4:B7<br>TYPE=Ethernet<br>UUID=59fd610f-f172-4051-ab41-6547928ab4b9<br>ONBOOT=yes</p>
+<p>—修改一下配置—</p>
+<p>NM_CONTROLLED=yes<br>BOOTPROTO=static<br>IPADDR=192.168.2.128<br>GATEWAT=192.168.2.1<br>BROADCAST=192.168.2.255</p>
+<p><strong>vi如果使用shift+z+z无法保存， 则使用 “:wq!”</strong></p>
+<h4 id="d-通过网络名访问虚拟机-192-168-2-128-gt-bigdata01"><a href="#d-通过网络名访问虚拟机-192-168-2-128-gt-bigdata01" class="headerlink" title="d.通过网络名访问虚拟机 (192.168.2.128 -&gt;bigdata01)"></a>d.通过网络名访问虚拟机 (192.168.2.128 -&gt;bigdata01)</h4><p>​        centos:<br>​            vi /etc/hosts,<br>​            追加：<br>​            192.168.2.128 bigdat01<br>​        windows:<br>​            C:\Windows\System32\drivers\etc\hosts<br>​            追加：<br>​            192.168.2.128 bigdata01</p>
+<h4 id="e-配置网络服务"><a href="#e-配置网络服务" class="headerlink" title="e.配置网络服务"></a>e.配置网络服务</h4><p>​        service NetworkManager stop<br>​        /etc/init.d/network restart<br>​        chkconfig NetworkManager off<br>​        vi /etc/resolv.conf  追加nameserver 192.168.2.1</p>
+<p>​        重启网卡 service network restart</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringMVC—-JSR303校验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/05/SpringMVC%E2%80%94-JSR303%E6%A0%A1%E9%AA%8C/">SpringMVC—JSR303校验</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/05/SpringMVC%E2%80%94-JSR303%E6%A0%A1%E9%AA%8C/" class="archive-article-date">
+  	<time datetime="2020-11-05T15:20:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="校验使用方法："><a href="#校验使用方法：" class="headerlink" title="校验使用方法："></a>校验使用方法：</h1><h4 id="引入依赖："><a href="#引入依赖：" class="headerlink" title="引入依赖："></a>引入依赖：</h4><p>A、 Jar： (注意各个jar的版本问题，可能存在不兼容)</p>
+<p>hibernate-validator-5.0.0.CR2.jar </p>
+<p> classmate-0.8.0.jar </p>
+<p> jboss-logging-3.1.1.GA.jar</p>
+<p>validation-api-1.1.0.CR1.jar</p>
+<p>hibernate-validator-annotation-processor-5.0.0.CR2.jar</p>
+<h4 id="必要配置："><a href="#必要配置：" class="headerlink" title="必要配置："></a>必要配置：</h4><p>B、 配置：</p>
+<p> <a href="mvc:annotation-driven">mvc:annotation-driven</a></mvc:annotation-driven> 该注解可以自动加载一个LocalValidatorFactoryBean的类，因此可以直接实现数据校验。</p>
+<p>了解:</p>
+<p>​        此时mvc:annotation-driven的作用：要实现Hibernate Validator/JSR303 校验（或者其他各种校验），必须实现SpringMVC提供的一个接口：ValidatorFactory</p>
+<p>​      LocalValidatorFactoryBean是ValidatorFactory的一个实现类。</p>
+<h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><p>A、 直接使用注解：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Past</span><span class="comment">//当前时间以前</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">private</span> Date birthday ;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在校验的Controller中 ，给校验的对象前增加 @Valid*</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testDateTimeFormat</span><span class="params">(<span class="meta">@Valid</span> Student student , BindingResult result , Map&lt;String,Object&gt; map)</span> </span>&#123;……. &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="JSR-303提供的标准注解如表所示。"><a href="#JSR-303提供的标准注解如表所示。" class="headerlink" title="JSR 303提供的标准注解如表所示。"></a>JSR 303提供的标准注解如表所示。</h4><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Null</td>
+<td>被注释的元素必须为 null。</td>
+</tr>
+<tr>
+<td>@NotNull</td>
+<td>被注释的元素必须不为 null。</td>
+</tr>
+<tr>
+<td>@AssertTrue</td>
+<td>被注释的元素必须为 true。</td>
+</tr>
+<tr>
+<td>@AssertFalse</td>
+<td>被注释的元素必须为 false。</td>
+</tr>
+<tr>
+<td>@Min(value)</td>
+<td>被注释的元素必须是一个数字，其值必须大于或等于value。</td>
+</tr>
+<tr>
+<td>@Max(value)</td>
+<td>被注释的元素必须是一个数字，其值必须小于或等于value。</td>
+</tr>
+<tr>
+<td>@DecimalMin(value)</td>
+<td>被注释的元素必须是一个数字，其值必须大于或等于value。</td>
+</tr>
+<tr>
+<td>@DecimalMax(value)</td>
+<td>被注释的元素必须是一个数字，其值必须小于或等于value。</td>
+</tr>
+<tr>
+<td>@Size(max, min)</td>
+<td>被注释的元素的取值范围必须是介于min和max之间。</td>
+</tr>
+<tr>
+<td>@Digits (integer, fraction)</td>
+<td>被注释的元素必须是一个数字，其值必须在可接受的范围内。</td>
+</tr>
+<tr>
+<td>@Past</td>
+<td>被注释的元素必须是一个过去的日期。</td>
+</tr>
+<tr>
+<td>@Future</td>
+<td>被注释的元素必须是一个将来的日期。</td>
+</tr>
+<tr>
+<td>@Pattern(value)</td>
+<td>被注释的元素必须符合指定的正则表达式。</td>
+</tr>
+</tbody></table>
+<h4 id="Hibernate-Validator："><a href="#Hibernate-Validator：" class="headerlink" title="Hibernate Validator："></a>Hibernate Validator：</h4><p>Hibernate Validator 是JSR 303的扩展。Hibernate Validator 提供了 JSR 303中所有内置的注解，以及自身扩展的4个注解，如表所示。</p>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Email</td>
+<td>被注释的元素值必须是合法的电子邮箱地址。</td>
+</tr>
+<tr>
+<td>@Length</td>
+<td>被注释的字符串的长度必须在指定的范围内。</td>
+</tr>
+<tr>
+<td>@NotEmpty</td>
+<td>被注释的字符串的必须非空。</td>
+</tr>
+<tr>
+<td>@Range</td>
+<td>被注释的元素必须在合适的范围内。</td>
+</tr>
+</tbody></table>
+<h4 id="Maven依赖：（注意各个版本的依赖-，有可能会出现问题）"><a href="#Maven依赖：（注意各个版本的依赖-，有可能会出现问题）" class="headerlink" title="Maven依赖：（注意各个版本的依赖 ，有可能会出现问题）"></a>Maven依赖：（注意各个版本的依赖 ，有可能会出现问题）</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    数据校验jar 包--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.hibernate<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hibernate-validator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.0.CR2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.fasterxml/classmate --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>classmate<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.8.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">     <span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.jboss.logging<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jboss-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.1.GA<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/javax.validation/validation-api --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.validation<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>validation-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.0.CR1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">     <span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator-annotation-processor --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.hibernate<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hibernate-validator-annotation-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.0.CR2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spring MVC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/05/SpringMVC%E2%80%94-JSR303%E6%A0%A1%E9%AA%8C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="w-Linux基础命令" class="article article-type-w  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -732,158 +995,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-%E7%94%A8%E6%88%B7%E6%9F%A5%E7%9C%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-商城项目_用户添加" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/">商城项目_用户添加</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/" class="archive-article-date">
-  	<time datetime="2020-10-20T09:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="商城项目-用户模块编写"><a href="#商城项目-用户模块编写" class="headerlink" title="商城项目_用户模块编写"></a>商城项目_用户模块编写</h1>
-        
-          <a class="article-more-a" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web项目</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/20/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE_%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="w-SpringMVC-入门" class="article article-type-w  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/18/SpringMVC-%E5%85%A5%E9%97%A8/">SpringMVC-配置</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/18/SpringMVC-%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2020-10-18T13:17:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>配置：</p>
-        
-          <a class="article-more-a" href="/2020/10/18/SpringMVC-%E5%85%A5%E9%97%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spring MVC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/18/SpringMVC-%E5%85%A5%E9%97%A8/">展开全文 >></a>
         </p>
       
 
