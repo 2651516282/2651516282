@@ -150,6 +150,178 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Spring-Boot-自动装配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/12/Spring-Boot-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/">Spring Boot_自动装配</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/12/Spring-Boot-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/" class="archive-article-date">
+  	<time datetime="2021-04-12T10:33:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="如何自动装配："><a href="#如何自动装配：" class="headerlink" title="如何自动装配："></a>如何自动装配：</h4><p>​    研究org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration,\</p>
+<p>​    通过观察该源码 发现：</p>
+<p>​        @Configuration：标识此类是一个配置类、将此纳入IOC容器；</p>
+<p>​        @EnableConfigurationProperties(HttpEncodingProperties.class)： 通过HttpEncodingProperties将编码设置为了UTF_8 (即自动装配为UTF_8, <strong>如何修改改编码：通过改HttpEncodingProperties的 predfix+属性名 进行修改</strong> [配置文件中，yml/properties])</p>
+<p>即：该注解给了默认编码utf8，并且提供了prefix+属性名 的方式 供我们修改编码。</p>
+<p>@ConditionalOnProperty(prefix = “spring.http.encoding”, value = “enabled”, matchIfMissing = true)</p>
+<p>​       当属性满足条件时， 此条件成立 ： 要求 如果没有配置则spring.http.encoding.enabled=xxx, 则成立。</p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>​    1、每一个XxAutoConfiguration 都有很多条件@ConditionalOnXxx，当这些条件都满足时，则此配置自动装配生效（utf-8）。但是我们可以手工修改改 自动装配： XxxProperties文件中的 prefix.属性名=value ；</p>
+<p>​    2、 全局配置文件中的key， 来源于某个Properties文件中的 prefix+属性名；</p>
+<p>如何找到 spring boot 开启了哪些自动装配 、 禁止了那些自动装配：</p>
+<p>​    <strong>application.properties**</strong>中 debug=true**</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/12/Spring-Boot-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Spring-Boot笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/12/Spring-Boot%E7%AC%94%E8%AE%B0/">Spring Boot笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/12/Spring-Boot%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-04-12T10:21:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>创建Spring Boot 项目：<a target="_blank" rel="noopener" href="http://start.aliyun.com/">http://start.aliyun.com</a></p>
+<h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><p>​    a)    static:静态资源（js css 图片 音频 视频）</p>
+<p>​    b)    templates：模板文件（模版引擎freemarker ,thymeleaf；默认不支持jsp）</p>
+<p>​    c)    application.properties： 配置文件</p>
+<p>Spring Boot内置了tomcat不需要再打成war在执行，可以在appication.properties对端口号等 服务端进行配置</p>
+<h4 id="注解："><a href="#注解：" class="headerlink" title="注解："></a>注解：</h4><p>​    @SpringBootApplication Spring Boot 的主要配置类，该注解包含：</p>
+<p>​        @SpringBootConfiguration  :包含@Configuration ，表示“配置类” ；</p>
+<p>​        @EnableAutoConfiguration ：该注解使String boot 可以自动配置，不需要配置spring mvc等一系列 配置文件 ; 此注解包含：</p>
+<p>​                @AutoConfigurationPackage 相对于springmvc 把带有控制器注解放到扫描器中；</p>
+<p>​                @Import({AutoConfigurationImportSelector.class})三方依赖；</p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>​    编写项目时，一般会 对自己写的代码 以及 三方依赖 进行配置。但是spring boot可以自动进行配置：</p>
+<p>​     <strong>a.</strong> 自己写的代码,spring boot通过@SpringBootConfiguration自动帮我们配置；</p>
+<p>​     <strong>b.</strong> 三方依赖 通过spring-boot-autoconfigure-2.0.3.RELEASE.jar中</p>
+<p>​       的META-INF/spring.factories进行声明，然后通过@EnableAutoConfiguration开启使用即可</p>
+<p>​    <strong>spring-boot-autoconfigure-2.0.3.RELEASE.jar**</strong>包中 包含了 J2EE整合体系中 需要的依赖。**</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/12/Spring-Boot%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ssm-dubbo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -180,6 +352,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Dubbo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -247,6 +430,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Dubbo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -312,6 +506,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Dubbo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -717,164 +922,9 @@
 
 
   
-    <article id="w-Linux基础命令" class="article article-type-w  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/04/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">Linux基础命令</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/04/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-11-04T15:34:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Linux基础配置"><a href="#Linux基础配置" class="headerlink" title="Linux基础配置"></a>Linux基础配置</h1><p>鼠标从虚拟机中释放：ctrl+alt</p>
-<p>查看计算机名：hostname<br>修改计算机名：/etc/sysconfig/network</p>
-        
-          <a class="article-more-a" href="/2020/11/04/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/04/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="w-Linux基础01-配置" class="article article-type-w  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/04/Linux%E5%9F%BA%E7%A1%8001-%E9%85%8D%E7%BD%AE/">Linux安装配置</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/04/Linux%E5%9F%BA%E7%A1%8001-%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-11-04T15:30:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Linux-安装步骤："><a href="#Linux-安装步骤：" class="headerlink" title="Linux 安装步骤："></a>Linux 安装步骤：</h1><h4 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h4><p>linux:发行版 Ubuntu  REdHat centos Debain Fedora,SUSE,OpenSUSE</p>
-<p>centos 6.x<br>centos 7.x</p>
-<p>在虚拟机(VmWare)上 安装linux(centos6.5/6.8)<br>centos：CentOS-6.8-x86_64-bin-DVD1.iso  ，<a target="_blank" rel="noopener" href="http://archive.kernel.org/centos-vault/6.8/isos/x86_64/CentOS-6.8-x86_64-bin-DVD1.iso">http://archive.kernel.org/centos-vault/6.8/isos/x86_64/CentOS-6.8-x86_64-bin-DVD1.iso</a></p>
-        
-          <a class="article-more-a" href="/2020/11/04/Linux%E5%9F%BA%E7%A1%8001-%E9%85%8D%E7%BD%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/04/Linux%E5%9F%BA%E7%A1%8001-%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -982,6 +1032,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">日记随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
             
             <div class="clearfix"></div>

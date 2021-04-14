@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Dubbo服务的理解 | Disembark</title>
+  <title>Spring Boot笔记 | Disembark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="dubbo（阿里巴巴产品）： ​    提供方（Provider）、消费方（Consumer）、注册中心（Reqistry）、监听器（Montior）可以图形化显示消费方和服务方 提供方容器运行提供方的服务 –&gt; 发布服务至注册中心 –&gt; 消费方订阅服务 –&gt; 注册中心推送服务（实施简体服务方是否发生改变）–&gt; 消费方调用提供方">
+  <meta name="description" content="创建Spring Boot 项目：http:&#x2F;&#x2F;start.aliyun.com 目录结构：​    a)    static:静态资源（js css 图片 音频 视频） ​    b)    templates：模板文件（模版引擎freemarker ,thymeleaf；默认不支持jsp） ​    c)    application.properties： 配置文件 Spring Boot内">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dubbo服务的理解">
-<meta property="og:url" content="http://example.com/2021/03/24/Dubbo%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:title" content="Spring Boot笔记">
+<meta property="og:url" content="http://example.com/2021/04/12/Spring-Boot%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Disembark">
-<meta property="og:description" content="dubbo（阿里巴巴产品）： ​    提供方（Provider）、消费方（Consumer）、注册中心（Reqistry）、监听器（Montior）可以图形化显示消费方和服务方 提供方容器运行提供方的服务 –&gt; 发布服务至注册中心 –&gt; 消费方订阅服务 –&gt; 注册中心推送服务（实施简体服务方是否发生改变）–&gt; 消费方调用提供方">
+<meta property="og:description" content="创建Spring Boot 项目：http:&#x2F;&#x2F;start.aliyun.com 目录结构：​    a)    static:静态资源（js css 图片 音频 视频） ​    b)    templates：模板文件（模版引擎freemarker ,thymeleaf；默认不支持jsp） ​    c)    application.properties： 配置文件 Spring Boot内">
 <meta property="og:locale">
-<meta property="og:image" content="file://C:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210324115850071.png?lastModify=1616560095">
-<meta property="article:published_time" content="2021-03-24T03:57:29.000Z">
-<meta property="article:modified_time" content="2021-03-25T02:01:02.446Z">
+<meta property="article:published_time" content="2021-04-12T10:21:09.000Z">
+<meta property="article:modified_time" content="2021-04-12T10:32:58.236Z">
 <meta property="article:author" content="zc">
-<meta property="article:tag" content="Dubbo">
+<meta property="article:tag" content="Spring Boot">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="file://C:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210324115850071.png?lastModify=1616560095">
   
     <link rel="alternative" href="/atom.xml" title="Disembark" type="application/atom+xml">
   
@@ -156,38 +154,41 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="w-Dubbo服务的理解" class="article article-type-w " itemscope itemprop="blogPost">
+<article id="post-Spring-Boot笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Dubbo服务的理解
+      Spring Boot笔记
     </h1>
   
 
         
-        <a href="/2021/03/24/Dubbo%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2021-03-24T03:57:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
+        <a href="/2021/04/12/Spring-Boot%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-04-12T10:21:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>dubbo（阿里巴巴产品）：</p>
-<p>​    提供方（Provider）、消费方（Consumer）、注册中心（Reqistry）、监听器（Montior）可以图形化显示消费方和服务方</p>
-<p>提供方容器运行提供方的服务 –&gt; 发布服务至注册中心 –&gt; 消费方订阅服务 –&gt; 注册中心推送服务（实施简体服务方是否发生改变）–&gt; 消费方调用提供方</p>
-<a id="more"></a>
-
-
-
-
-
-
-
-<p><img src="file://C:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210324115850071.png?lastModify=1616560095" alt="image-20210324115850071"></p>
+        <p>创建Spring Boot 项目：<a target="_blank" rel="noopener" href="http://start.aliyun.com/">http://start.aliyun.com</a></p>
+<h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><p>​    a)    static:静态资源（js css 图片 音频 视频）</p>
+<p>​    b)    templates：模板文件（模版引擎freemarker ,thymeleaf；默认不支持jsp）</p>
+<p>​    c)    application.properties： 配置文件</p>
+<p>Spring Boot内置了tomcat不需要再打成war在执行，可以在appication.properties对端口号等 服务端进行配置</p>
+<h4 id="注解："><a href="#注解：" class="headerlink" title="注解："></a>注解：</h4><p>​    @SpringBootApplication Spring Boot 的主要配置类，该注解包含：</p>
+<p>​        @SpringBootConfiguration  :包含@Configuration ，表示“配置类” ；</p>
+<p>​        @EnableAutoConfiguration ：该注解使String boot 可以自动配置，不需要配置spring mvc等一系列 配置文件 ; 此注解包含：</p>
+<p>​                @AutoConfigurationPackage 相对于springmvc 把带有控制器注解放到扫描器中；</p>
+<p>​                @Import({AutoConfigurationImportSelector.class})三方依赖；</p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>​    编写项目时，一般会 对自己写的代码 以及 三方依赖 进行配置。但是spring boot可以自动进行配置：</p>
+<p>​     <strong>a.</strong> 自己写的代码,spring boot通过@SpringBootConfiguration自动帮我们配置；</p>
+<p>​     <strong>b.</strong> 三方依赖 通过spring-boot-autoconfigure-2.0.3.RELEASE.jar中</p>
+<p>​       的META-INF/spring.factories进行声明，然后通过@EnableAutoConfiguration开启使用即可</p>
+<p>​    <strong>spring-boot-autoconfigure-2.0.3.RELEASE.jar**</strong>包中 包含了 J2EE整合体系中 需要的依赖。**</p>
 
       
 
@@ -222,7 +223,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Dubbo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
         		</li>
       		
 		</ul>
@@ -278,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/24/Dubbo%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%90%86%E8%A7%A3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/12/Spring-Boot%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,18 +293,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/24/ssm-dubbo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/04/12/Spring-Boot-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ssm+dubbo
+          Spring Boot_自动装配
         
       </div>
     </a>
   
   
-    <a href="/2021/03/24/Dubbo%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Dubbo+zookeeper</div>
+    <a href="/2021/03/24/ssm-dubbo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ssm+dubbo</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -330,7 +331,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">目录结构：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">注解：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">总结：</span></a></li></ol>
                     </div>
                 </span>
             </div>
