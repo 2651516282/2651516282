@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Linux网络搭建 | Disembark</title>
+  <title>JavaScript笔记 | Disembark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="centos网络配置​    bigdata01:    192.168.2.128        192.168.2.1（网关）网关全部一致​    bigdata02    192.168.2.129        192.168.2.1（网关）​    bigdata03    192.168.2.130        192.168.2.1（网关） a.编辑-虚拟机网络编辑器VMNet8">
+  <meta name="description" content="1、引入内部引入​    内部标签引入： 123&lt;script&gt;   alert(&quot;hello word&quot;);&lt;&#x2F;script&gt;    外部引入12&lt;!--    外部引入--&gt;    &lt;script src&#x3D;&quot;qj.js&quot;&gt;&lt;&#x2F;script&gt;    2、基本语法注意： ​    严格区分大小写；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux网络搭建">
-<meta property="og:url" content="http://example.com/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:title" content="JavaScript笔记">
+<meta property="og:url" content="http://example.com/2021/06/24/JavaScript%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Disembark">
-<meta property="og:description" content="centos网络配置​    bigdata01:    192.168.2.128        192.168.2.1（网关）网关全部一致​    bigdata02    192.168.2.129        192.168.2.1（网关）​    bigdata03    192.168.2.130        192.168.2.1（网关） a.编辑-虚拟机网络编辑器VMNet8">
+<meta property="og:description" content="1、引入内部引入​    内部标签引入： 123&lt;script&gt;   alert(&quot;hello word&quot;);&lt;&#x2F;script&gt;    外部引入12&lt;!--    外部引入--&gt;    &lt;script src&#x3D;&quot;qj.js&quot;&gt;&lt;&#x2F;script&gt;    2、基本语法注意： ​    严格区分大小写；">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-11-05T15:43:15.000Z">
-<meta property="article:modified_time" content="2020-11-19T13:08:10.711Z">
+<meta property="article:published_time" content="2021-06-24T08:46:13.000Z">
+<meta property="article:modified_time" content="2021-06-24T09:22:38.449Z">
 <meta property="article:author" content="zc">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Disembark" type="application/atom+xml">
@@ -154,39 +154,98 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-Linux网络搭建" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-JavaScript笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Linux网络搭建
+      JavaScript笔记
     </h1>
   
 
         
-        <a href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-11-05T15:43:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
+        <a href="/2021/06/24/JavaScript%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-06-24T08:46:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="centos网络配置"><a href="#centos网络配置" class="headerlink" title="centos网络配置"></a>centos网络配置</h1><p>​    bigdata01:    192.168.2.128        192.168.2.1（网关）网关全部一致<br>​    bigdata02    192.168.2.129        192.168.2.1（网关）<br>​    bigdata03    192.168.2.130        192.168.2.1（网关）</p>
-<h2 id="a-编辑-虚拟机网络编辑器"><a href="#a-编辑-虚拟机网络编辑器" class="headerlink" title="a.编辑-虚拟机网络编辑器"></a>a.编辑-虚拟机网络编辑器</h2><h4 id="VMNet8-NAT"><a href="#VMNet8-NAT" class="headerlink" title="VMNet8 (NAT)"></a>VMNet8 (NAT)</h4><p>i.子网 192.168.2.0<br>ii.更改设置-DHCP设置 ：<br>    起始192.168.2.128    bigdata01<br>    结束192.168.2.254<br>iii.NAT设置：网关 192.168.2.1</p>
-<h4 id="b-配置windows访问虚拟机"><a href="#b-配置windows访问虚拟机" class="headerlink" title="b.配置windows访问虚拟机"></a>b.配置windows访问虚拟机</h4><p>网络连接-vmNet8-TCP/IP V4 - IP192.168.2.2 ， 192.168.2.1（网关）</p>
-<a id="more"></a>
+        <h2 id="1、引入"><a href="#1、引入" class="headerlink" title="1、引入"></a>1、引入</h2><h4 id="内部引入"><a href="#内部引入" class="headerlink" title="内部引入"></a>内部引入</h4><p>​    内部标签引入：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">   alert(<span class="string">&quot;hello word&quot;</span>);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<h4 id="c-centos网卡"><a href="#c-centos网卡" class="headerlink" title="c.centos网卡"></a>c.centos网卡</h4><p>修改网卡配置 vi /etc/sysconfig/network-scripts/ifcfg-eth0</p>
-<p>DEVICE=eth0<br>HWADDR=00:0C:29:68:B4:B7<br>TYPE=Ethernet<br>UUID=59fd610f-f172-4051-ab41-6547928ab4b9<br>ONBOOT=yes</p>
-<p>—修改一下配置—</p>
-<p>NM_CONTROLLED=yes<br>BOOTPROTO=static<br>IPADDR=192.168.2.128<br>GATEWAY=192.168.2.1<br>BROADCAST=192.168.2.255</p>
-<p><strong>vi如果使用shift+z+z无法保存， 则使用 “:wq!”</strong></p>
-<h4 id="d-通过网络名访问虚拟机-192-168-2-128-gt-bigdata01"><a href="#d-通过网络名访问虚拟机-192-168-2-128-gt-bigdata01" class="headerlink" title="d.通过网络名访问虚拟机 (192.168.2.128 -&gt;bigdata01)"></a>d.通过网络名访问虚拟机 (192.168.2.128 -&gt;bigdata01)</h4><p>​        centos:<br>​            vi /etc/hosts,<br>​            追加：<br>​            192.168.2.128 bigdat01<br>​        windows:<br>​            C:\Windows\System32\drivers\etc\hosts<br>​            追加：<br>​            192.168.2.128 bigdata01</p>
-<h4 id="e-配置网络服务"><a href="#e-配置网络服务" class="headerlink" title="e.配置网络服务"></a>e.配置网络服务</h4><p>​        service NetworkManager stop<br>​        /etc/init.d/network restart<br>​        chkconfig NetworkManager off<br>​        vi /etc/resolv.conf  追加nameserver 192.168.2.1</p>
-<p>​        重启网卡 service network restart</p>
+
+
+<h4 id="外部引入"><a href="#外部引入" class="headerlink" title="外部引入"></a>外部引入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--    外部引入--&gt;</span><br><span class="line">    &lt;script src=<span class="string">&quot;qj.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2、基本语法"><a href="#2、基本语法" class="headerlink" title="2、基本语法"></a>2、基本语法</h2><p>注意：</p>
+<p>​    严格区分大小写；</p>
+<p>​    语法格式按照Java写就没问题；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 按照java的语法来严谨控制</span></span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&quot;zhangchen&quot;</span>;</span><br><span class="line">    <span class="comment">// alert(name);</span></span><br><span class="line">    <span class="comment">// 条件控制</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="number">1</span>&gt;num)&#123;</span><br><span class="line">        alert(<span class="string">&quot;true&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        alert(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 注意JavaScript严格区分大小写</span></span><br><span class="line">    <span class="comment">// console.log()   == sout</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3、数据类型"><a href="#3、数据类型" class="headerlink" title="3、数据类型"></a>3、数据类型</h2><h4 id="1、变量声明"><a href="#1、变量声明" class="headerlink" title="1、变量声明"></a>1、变量声明</h4><p>​    js中所有变量声明只有var关键字；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="number">123</span>;</span><br><span class="line"><span class="keyword">var</span> A=<span class="number">456</span>;</span><br><span class="line"><span class="keyword">var</span> a1=<span class="string">&quot;js&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> a2=<span class="string">&quot;k&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> a3=<span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> a4=<span class="number">3.1415926</span>;</span><br><span class="line"><span class="keyword">var</span> a5=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>​    js的变量名是有严格区分大小写；</p>
+<p>​    js中字符串可以使用单引号也可是双引号；</p>
+<h4 id="2、数据类型"><a href="#2、数据类型" class="headerlink" title="2、数据类型"></a>2、数据类型</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">判断数据类型: <span class="keyword">typeof</span></span><br><span class="line">数据类型:</span><br><span class="line">	number	:数字</span><br><span class="line">	string	:字符串类型</span><br><span class="line">	boolean	:布尔</span><br><span class="line">	object	:对象类型</span><br><span class="line">	<span class="literal">null</span>	:空</span><br><span class="line">	underfined	:变量声明不复制的情况下默认是underfined</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、变量的强转"><a href="#3、变量的强转" class="headerlink" title="3、变量的强转"></a>3、变量的强转</h4><p>  使用 Number（）函数：将其数据类型转换为数值类型 ，装换失败返回NaN；</p>
+<p>（常用）使用boolean（）函数：将其数据类型转换为布尔类型 ，有值返回t，无值返回f；</p>
+<h4 id="4、等值运算符"><a href="#4、等值运算符" class="headerlink" title="4、等值运算符"></a>4、等值运算符</h4><blockquote>
+<p>== </p>
+<p>先判断类型，类型一致则直接比较；</p>
+<p>类型不一致，则先使用number（）进行强转后在进行比较</p>
+</blockquote>
+<blockquote>
+<p>===  等同运算符</p>
+<p>先判断类型，类型一致则在比较内容，内容一致则返回T，否则反之。</p>
+</blockquote>
+<p><em>注意：</em></p>
+<p>​    null 和 undefined 在做 == 判断返回T；</p>
+<p>​    <strong>NaN === NaN ， 这个所有的数值都不相等，包括自己；</strong></p>
+<p>​    <strong>只能通过isNaN（NaN）来判断这个数是否是NaN；</strong></p>
+<h4 id="5、数组"><a href="#5、数组" class="headerlink" title="5、数组"></a>5、数组</h4><ol>
+<li><p>js的数组声明不用指定长度；</p>
+</li>
+<li><p>js的数据长度不是固定的，会随着元素而改变长度；</p>
+</li>
+<li><p>js的下标可是任意整数的值：</p>
+</li>
+<li><p>数组的取出：</p>
+<p>​            数组名加下标；</p>
+<p>​            如果不存在返回undefined ，也不会报错；</p>
+</li>
+<li><p>js的数组长度lenght</p>
+<ol>
+<li><p>长度可以设定</p>
+<p><strong>注意：</strong></p>
+<p>​    length&gt;原有长度，则使用空来显示；</p>
+<p>​    length&lt;原有长度,则在后面进行截取，最后的数据会被清空；</p>
+</li>
+</ol>
+</li>
+<li><p>数组的遍历</p>
+<p><strong>注意：</strong></p>
+<p>​    注意for循环直接遍历出的是下标；</p>
+<p>​    要数据要加变量arr[i]；</p>
+</li>
+</ol>
+<p>   数组长度 length ；</p>
+<p>   截取slice()</p>
+<p>   尾部填充push</p>
+<p>   尾部消除pop</p>
+<p>   头部填充unshift</p>
+<p>   头部消除shift</p>
+<p>   获取下标索引IndexOf</p>
+<p>   字符串拼接返回一个新的数组concat（不会对之前的数组有影响）</p>
+<p>   ​       </p>
 
       
 
@@ -221,7 +280,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -277,7 +336,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/24/JavaScript%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,18 +350,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/11/20/Linux%E9%85%8D%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/10/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E7%BB%93%E6%9E%84%E2%80%94-Java/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Linux配置防火墙
+          数据结结构_Java
         
       </div>
     </a>
   
   
-    <a href="/2020/11/05/SpringMVC%E2%80%94-JSR303%E6%A0%A1%E9%AA%8C/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SpringMVC—JSR303校验</div>
+    <a href="/2021/04/12/Spring-Boot-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring Boot_自动装配</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -329,7 +388,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#centos%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">centos网络配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#a-%E7%BC%96%E8%BE%91-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">a.编辑-虚拟机网络编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#VMNet8-NAT"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">VMNet8 (NAT)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-%E9%85%8D%E7%BD%AEwindows%E8%AE%BF%E9%97%AE%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">b.配置windows访问虚拟机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-centos%E7%BD%91%E5%8D%A1"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">c.centos网卡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d-%E9%80%9A%E8%BF%87%E7%BD%91%E7%BB%9C%E5%90%8D%E8%AE%BF%E9%97%AE%E8%99%9A%E6%8B%9F%E6%9C%BA-192-168-2-128-gt-bigdata01"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">d.通过网络名访问虚拟机 (192.168.2.128 -&gt;bigdata01)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#e-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">e.配置网络服务</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%BC%95%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">1、引入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E5%BC%95%E5%85%A5"><span class="toc-number">1.0.1.</span> <span class="toc-text">内部引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E5%BC%95%E5%85%A5"><span class="toc-number">1.0.2.</span> <span class="toc-text">外部引入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2、基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">3、数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="toc-number">3.0.1.</span> <span class="toc-text">1、变量声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.0.2.</span> <span class="toc-text">2、数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%8F%98%E9%87%8F%E7%9A%84%E5%BC%BA%E8%BD%AC"><span class="toc-number">3.0.3.</span> <span class="toc-text">3、变量的强转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E7%AD%89%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.0.4.</span> <span class="toc-text">4、等值运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E3%80%81%E6%95%B0%E7%BB%84"><span class="toc-number">3.0.5.</span> <span class="toc-text">5、数组</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
