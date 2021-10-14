@@ -857,80 +857,6 @@
 
 
   
-    <article id="post-日记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/03/%E6%97%A5%E8%AE%B0/">12-03日记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/12/03/%E6%97%A5%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-12-02T16:17:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>现在是2020年12月3日00:18:42 刚刚弄了Linux ，明天公司的测试组要开始正式测试，可以说是测试这个工作越来越觉得不是自己想做的工作了，而且今天得到消息说专升本要4月份就开始了，也就是说距离专升本不到4个月了 ！！！，但是自己还想换工作，就要一手准备专升本，一手准备后端的工作，早上6点就要起，千万不要懒床啊 </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">日记随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/03/%E6%97%A5%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Linux配置防火墙" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -964,6 +890,84 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/11/20/Linux%E9%85%8D%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux网络搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/">Linux网络搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+  	<time datetime="2020-11-05T15:43:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="centos网络配置"><a href="#centos网络配置" class="headerlink" title="centos网络配置"></a>centos网络配置</h1><p>​    bigdata01:    192.168.2.128        192.168.2.1（网关）网关全部一致<br>​    bigdata02    192.168.2.129        192.168.2.1（网关）<br>​    bigdata03    192.168.2.130        192.168.2.1（网关）</p>
+<h2 id="a-编辑-虚拟机网络编辑器"><a href="#a-编辑-虚拟机网络编辑器" class="headerlink" title="a.编辑-虚拟机网络编辑器"></a>a.编辑-虚拟机网络编辑器</h2><h4 id="VMNet8-NAT"><a href="#VMNet8-NAT" class="headerlink" title="VMNet8 (NAT)"></a>VMNet8 (NAT)</h4><p>i.子网 192.168.2.0<br>ii.更改设置-DHCP设置 ：<br>    起始192.168.2.128    bigdata01<br>    结束192.168.2.254<br>iii.NAT设置：网关 192.168.2.1</p>
+<h4 id="b-配置windows访问虚拟机"><a href="#b-配置windows访问虚拟机" class="headerlink" title="b.配置windows访问虚拟机"></a>b.配置windows访问虚拟机</h4><p>网络连接-vmNet8-TCP/IP V4 - IP192.168.2.2 ， 192.168.2.1（网关）</p>
+        
+          <a class="article-more-a" href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/">展开全文 >></a>
         </p>
       
 
@@ -1099,10 +1103,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">日记随笔</a>
               </li>
              
               <li class="article-tag-list-item">
