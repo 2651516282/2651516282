@@ -150,6 +150,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="w-数据结构—-C" class="article article-type-w  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94-C/">数据结构—_C</a>
+    </h1>
+  
+
+        
+        <a href="/2021/10/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94-C/" class="archive-article-date">
+  	<time datetime="2021-10-20T08:44:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>创建连续存储的数组</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	流程 </span></span><br><span class="line"><span class="comment">	语句功能</span></span><br><span class="line"><span class="comment">	试数 </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//#include &lt;malloc.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义了一个数据类型 ，该类型的名字叫做struct Arr ，该数据含有三个成员 </span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Arr</span>&#123;</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> *pBase; 	<span class="comment">// 存储的事数组第一个元素的地址 </span></span><br><span class="line">	<span class="keyword">int</span> len;		<span class="comment">// 数据所能容纳的最大元素的个数 </span></span><br><span class="line">	<span class="keyword">int</span> cnt;		<span class="comment">// 当前数组有效元素的个数 </span></span><br><span class="line">	</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init_arr</span><span class="params">(struct Arr * pArr,<span class="keyword">int</span> length)</span></span>;   <span class="comment">// 初始化 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">append_arr</span><span class="params">(struct Arr * pArr,<span class="keyword">int</span> value)</span></span>; <span class="comment">//追加</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insert_arr</span><span class="params">(struct Arr * pArr,<span class="keyword">int</span> pos,<span class="keyword">int</span> value)</span></span>; <span class="comment">//插入  pos下标从一开始  查找下标 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">delet_arr</span><span class="params">(struct Arr * pArr,<span class="keyword">int</span> pos,<span class="keyword">int</span> *pValue)</span></span>;  <span class="comment">// 删除 </span></span><br><span class="line"><span class="comment">//int get();			//获取元素值 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_empty</span><span class="params">(struct Arr * pArr)</span></span>;   <span class="comment">//判断是否为空 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_full</span><span class="params">(struct Arr * pArr)</span></span>;			<span class="comment">//判断是否满了 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort_arr</span><span class="params">(struct Arr * pArr)</span></span>;		<span class="comment">//排序 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show_arr</span><span class="params">(struct Arr * pArr)</span></span>;     <span class="comment">//输出 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inversion_arr</span><span class="params">(struct Arr * pArr)</span></span>;	<span class="comment">//倒置 </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> value;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Arr</span> <span class="title">arr</span>;</span> </span><br><span class="line">	init_arr(&amp;arr,<span class="number">6</span>);</span><br><span class="line"><span class="comment">//	show_arr(&amp;arr);</span></span><br><span class="line">	append_arr(&amp;arr,<span class="number">1</span>);</span><br><span class="line">	append_arr(&amp;arr,<span class="number">2</span>);</span><br><span class="line">	append_arr(&amp;arr,<span class="number">3</span>);</span><br><span class="line">	append_arr(&amp;arr,<span class="number">4</span>);</span><br><span class="line"><span class="comment">//	append_arr(&amp;arr,5);</span></span><br><span class="line">	append_arr(&amp;arr,<span class="number">6</span>);</span><br><span class="line"><span class="comment">//	insert_arr(&amp;arr,-1,99);</span></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(  delet_arr(&amp;arr,<span class="number">1</span>,&amp;value)  ) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;删除成功,删除元素值：%d \n&quot;</span>,value); </span><br><span class="line">		</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;删除失败\n&quot;</span>); </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">	append_arr(&amp;arr,7);</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	if(	append_arr(&amp;arr,8))&#123;</span></span><br><span class="line"><span class="comment">		printf(&quot;追加成功\n&quot;);</span></span><br><span class="line"><span class="comment">	&#125;else&#123;</span></span><br><span class="line"><span class="comment">		printf(&quot;追加失败\n&quot;);		</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">	show_arr(&amp;arr);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">	</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init_arr</span><span class="params">(struct Arr *pArr,<span class="keyword">int</span> length)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	pArr-&gt;pBase = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*length);</span><br><span class="line">	<span class="keyword">if</span>(<span class="literal">NULL</span> == pArr-&gt;pBase)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;动态内存分配失败；\n&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">-1</span>);			<span class="comment">//	终止程序		</span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		pArr-&gt;len = length;</span><br><span class="line">		pArr-&gt;cnt = <span class="number">0</span>;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_empty</span><span class="params">(struct Arr * pArr)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="number">0</span> == pArr-&gt;cnt)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show_arr</span><span class="params">(struct Arr * pArr)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(is_empty(pArr))&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;数组为空\n&quot;</span>);	</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;pArr-&gt;cnt;i++)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,pArr-&gt;pBase[i]);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_full</span><span class="params">(struct Arr * pArr)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(pArr-&gt;cnt == pArr-&gt;len)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;	</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">append_arr</span><span class="params">(struct Arr * pArr,<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">	<span class="comment">//满 </span></span><br><span class="line">	<span class="keyword">if</span>(is_full(pArr))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		</span><br><span class="line">	<span class="comment">// 不满时追加0</span></span><br><span class="line">	pArr-&gt;pBase[pArr-&gt;cnt] = value;</span><br><span class="line">	pArr-&gt;cnt++; </span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insert_arr</span><span class="params">(struct Arr * pArr,<span class="keyword">int</span> pos,<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">if</span>(is_full(pArr))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(pos&lt;<span class="number">1</span> || pos&gt;pArr-&gt;cnt+<span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=pArr-&gt;cnt<span class="number">-1</span>;i&gt;=pos<span class="number">-1</span>;i--)&#123;</span><br><span class="line">		</span><br><span class="line">		pArr-&gt;pBase[i+<span class="number">1</span>] = pArr-&gt;pBase[i];	</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	pArr-&gt;pBase[pos<span class="number">-1</span>] = value;</span><br><span class="line">	pArr-&gt;cnt++;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">delet_arr</span><span class="params">(struct Arr * pArr,<span class="keyword">int</span> pos,<span class="keyword">int</span> *value)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">if</span>(is_full(pArr)) </span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(pos&lt;<span class="number">1</span> || pos&gt;pArr-&gt;cnt)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	</span><br><span class="line">	*value = pArr-&gt;pBase[pos<span class="number">-1</span>];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=pos; i&lt;pArr-&gt;cnt;i++)&#123;</span><br><span class="line">		pArr-&gt;pBase[i<span class="number">-1</span>] = pArr-&gt;pBase[i];     <span class="comment">//   往前赋值    </span></span><br><span class="line">	&#125;</span><br><span class="line">	pArr-&gt;cnt--;    <span class="comment">// 删除后cnt 减一 </span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inversion_arr</span><span class="params">(struct Arr * pArr)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j = pArr-&gt;cnt<span class="number">-1</span>; </span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">		t = pArr-&gt;pBase[i];</span><br><span class="line">		pArr-&gt;pBase[i] = pArr-&gt;pBase[j];</span><br><span class="line">		pArr-&gt;pBase[j]  = t;</span><br><span class="line">		i++;</span><br><span class="line">		j--;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort_arr</span><span class="params">(struct Arr * pArr)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> i,j,t;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;pArr-&gt;cnt; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=i+<span class="number">1</span>; j&lt;pArr-&gt;cnt; j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(	pArr-&gt;pBase[i] &gt; pArr-&gt;pBase[j])&#123;</span><br><span class="line">				t = pArr-&gt;pBase[i];</span><br><span class="line">				pArr-&gt;pBase[i] = pArr-&gt;pBase[j];</span><br><span class="line">				pArr-&gt;pBase[j]  = t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+
+
+<p>离散储存【链表】</p>
+<p>​        定义：</p>
+<p>​                n个节点离散分配；</p>
+<p>​                彼此通过指针相连；</p>
+<p>​                每个节点只有一个前驱节点，每个节点只有一个后续节点；</p>
+<p>​                首节点没有前驱节点，尾节点没有后续节点；</p>
+<p>​            </p>
+<p>​                专业术语：</p>
+<p>​                        首节点：第一个有效节点</p>
+<p>​                        尾节点：最后一个有效节点</p>
+<p>​                        头节点：</p>
+<p>​                                    头节点的数据类型和首节点类型一样；</p>
+<p>​                                    第一个有效节点之前的哪个节点；</p>
+<p>​                                    头节点并不存放有效数据；</p>
+<p>​                                    加有节点的目的主要是为了方便对链表的操作；</p>
+<p>​                        头指针：指向头节点的指针变量</p>
+<p>​                        尾指针：指向尾节点的指针变量</p>
+<p>​                    </p>
+<p>​                <strong>至少接受链表的那些参数：</strong></p>
+<p>​                        只需要一个参数：头指针</p>
+<p>​                        通过头指针可以推算出链表的其他信息；</p>
+<p>​        分类：</p>
+<p>​        算法：</p>
+<p>​        链表到优缺点：</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数据结构-C</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/10/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94-C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据结结构—-Java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -919,84 +1021,6 @@
 
 
   
-    <article id="post-Linux网络搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/">Linux网络搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-11-05T15:43:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="centos网络配置"><a href="#centos网络配置" class="headerlink" title="centos网络配置"></a>centos网络配置</h1><p>​    bigdata01:    192.168.2.128        192.168.2.1（网关）网关全部一致<br>​    bigdata02    192.168.2.129        192.168.2.1（网关）<br>​    bigdata03    192.168.2.130        192.168.2.1（网关）</p>
-<h2 id="a-编辑-虚拟机网络编辑器"><a href="#a-编辑-虚拟机网络编辑器" class="headerlink" title="a.编辑-虚拟机网络编辑器"></a>a.编辑-虚拟机网络编辑器</h2><h4 id="VMNet8-NAT"><a href="#VMNet8-NAT" class="headerlink" title="VMNet8 (NAT)"></a>VMNet8 (NAT)</h4><p>i.子网 192.168.2.0<br>ii.更改设置-DHCP设置 ：<br>    起始192.168.2.128    bigdata01<br>    结束192.168.2.254<br>iii.NAT设置：网关 192.168.2.1</p>
-<h4 id="b-配置windows访问虚拟机"><a href="#b-配置windows访问虚拟机" class="headerlink" title="b.配置windows访问虚拟机"></a>b.配置windows访问虚拟机</h4><p>网络连接-vmNet8-TCP/IP V4 - IP192.168.2.2 ， 192.168.2.1（网关）</p>
-        
-          <a class="article-more-a" href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/05/Linux%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1119,6 +1143,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构—Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据结构-C</a>
               </li>
             
             <div class="clearfix"></div>
