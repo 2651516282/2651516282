@@ -170,36 +170,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>队列：</p>
-<p>​    定义：一种可以实现”先进先出”的存储结构</p>
-<p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103165900671.png" alt="image-20211103165900671"></p>
+        <h1 id="队列："><a href="#队列：" class="headerlink" title="队列："></a>队列：</h1><h6 id="定义：一种可以实现”先进先出”的存储结构"><a href="#定义：一种可以实现”先进先出”的存储结构" class="headerlink" title="定义：一种可以实现”先进先出”的存储结构"></a>定义：一种可以实现”先进先出”的存储结构</h6><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103165900671.png" alt="image-20211103165900671"></p>
 <ol>
-<li>分类：</li>
+<li><h4 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h4></li>
 </ol>
 <p>​            链式队列 – 用链表实现</p>
 <p>​            静态队列 – 用数组实现</p>
 <p>​                静态队列通常都必须是循环队列</p>
 <ol start="2">
-<li><p>循环队列：</p>
-<ol>
-<li><p>静态队列为什么必须是循环队列？ </p>
-</li>
-<li><p><strong>循环队列需要几个参数来确定和含义？</strong></p>
-<ol>
-<li><p>需要两个参数来确定； </p>
-<ol>
-<li>font</li>
+<li><h4 id="循环队列："><a href="#循环队列：" class="headerlink" title="循环队列："></a>循环队列：</h4></li>
+<li><h5 id="静态队列为什么必须是循环队列？"><a href="#静态队列为什么必须是循环队列？" class="headerlink" title="静态队列为什么必须是循环队列？"></a>静态队列为什么必须是循环队列？</h5></li>
+<li><h5 id="循环队列需要几个参数来确定和含义？"><a href="#循环队列需要几个参数来确定和含义？" class="headerlink" title="循环队列需要几个参数来确定和含义？"></a><strong>循环队列需要几个参数来确定和含义？</strong></h5><ol>
+<li><h6 id="需要两个参数来确定；"><a href="#需要两个参数来确定；" class="headerlink" title="需要两个参数来确定；"></a>需要两个参数来确定；</h6><ol>
+<li>font<ol start="2">
 <li>rear</li>
 </ol>
 </li>
-<li><p>2个参数不同场合有不同的含义</p>
-<ol>
+</ol>
+</li>
+<li><h6 id="2个参数不同场合有不同的含义"><a href="#2个参数不同场合有不同的含义" class="headerlink" title="2个参数不同场合有不同的含义"></a>2个参数不同场合有不同的含义</h6><ol>
 <li><p>队列初始化：font 和 rear 的值都是零</p>
 </li>
 <li><p>队列非空：</p>
 <ol>
-<li>font 代表队列的第一个元素；</li>
+<li>font 代表队列的第一个元素；<ol start="2">
 <li>rear代表队列的最后一个有效元素的下一个元素；</li>
+</ol>
+</li>
 </ol>
 </li>
 <li><p>队列空：font 和rear 的值相等，但不一定是零</p>
@@ -209,30 +206,21 @@
 </ol>
 </li>
 </ol>
-</li>
-</ol>
 <ol start="3">
-<li><p>循环队列入队伪算法？</p>
-<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20211108165808304.png" alt="image-20211108165808304" style="zoom:50%;" />
+<li><h5 id="循环队列入队伪算法？"><a href="#循环队列入队伪算法？" class="headerlink" title="循环队列入队伪算法？"></a>循环队列入队伪算法？</h5><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20211108165808304.png" alt="image-20211108165808304" style="zoom:50%;" />
 
 <ol>
-<li><p>将值存入r所代表的位置</p>
-</li>
-<li><p>错误写法： rear = rear +1；</p>
-<p>正确写法：rear = （ rear + 1 ） % 数组长度</p>
-</li>
+<li><h6 id="将值存入r所代表的位置"><a href="#将值存入r所代表的位置" class="headerlink" title="将值存入r所代表的位置"></a>将值存入r所代表的位置</h6></li>
+<li><h6 id="错误写法：-rear-rear-1；"><a href="#错误写法：-rear-rear-1；" class="headerlink" title="错误写法： rear = rear +1；"></a>错误写法： rear = rear +1；</h6><h6 id="正确写法：rear-（-rear-1-）-数组长度"><a href="#正确写法：rear-（-rear-1-）-数组长度" class="headerlink" title="正确写法：rear = （ rear + 1 ） % 数组长度"></a>正确写法：rear = （ rear + 1 ） % 数组长度</h6></li>
 </ol>
 </li>
-<li><p>循环队列出队伪算法？front = （ front + 1 ） % 数组长度</p>
+<li><h5 id="循环队列出队伪算法？front-（-front-1-）-数组长度"><a href="#循环队列出队伪算法？front-（-front-1-）-数组长度" class="headerlink" title="循环队列出队伪算法？front = （ front + 1 ） % 数组长度"></a>循环队列出队伪算法？front = （ front + 1 ） % 数组长度</h5></li>
+<li><h5 id="如何判断循环队列是否为空？"><a href="#如何判断循环队列是否为空？" class="headerlink" title="如何判断循环队列是否为空？"></a>如何判断循环队列是否为空？</h5><p>​    如果 front 和 rear 的值相等，则该队列就一定为空。</p>
 </li>
-<li><p>如何判断循环队列是否为空？</p>
-<p>​    如果 front 和 rear 的值相等，则该队列就一定为空。</p>
-</li>
-<li><p>如何判断循环队列是否已满？（<em>front 的值可能比rear 大 ，也完全有可能比rear 小，当然也可能相等</em>）</p>
-<p>两种方式：</p>
+<li><h5 id="如何判断循环队列是否已满？（front-的值可能比rear-大-，也完全有可能比rear-小，当然也可能相等）"><a href="#如何判断循环队列是否已满？（front-的值可能比rear-大-，也完全有可能比rear-小，当然也可能相等）" class="headerlink" title="如何判断循环队列是否已满？（front 的值可能比rear 大 ，也完全有可能比rear 小，当然也可能相等）"></a>如何判断循环队列是否已满？（<em>front 的值可能比rear 大 ，也完全有可能比rear 小，当然也可能相等</em>）</h5><p>两种方式：</p>
 <p>​        1.多增加一个标志参数；</p>
 <p>​        2.少用一个元素； </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">如果r和f的值紧挨着，则队列已满</span><br><span class="line"><span class="keyword">if</span>( (r+<span class="number">1</span>)%数组长度 == f )&#123;</span><br><span class="line">	满 </span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	不满 </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+   <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">如果r和f的值紧挨着，则队列已满</span><br><span class="line"><span class="keyword">if</span>( (r+<span class="number">1</span>)%数组长度 == f )&#123;</span><br><span class="line">	满 </span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	不满 </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
 
 
