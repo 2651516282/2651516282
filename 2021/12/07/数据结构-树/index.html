@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>数据结构-树 | Disembark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="树定义： 专业定义：  有且只有个成为根的节点；  有若干个互不相交的子树，这些子树本事也是一颗树      通俗的定义：  树是由节点和边（指针）组成；  每个节点只有一个父节点，但是可以有多个自己节点；  根节点没有父节点      专业术语：  节点  父节点  子节点  子孙  堂兄弟  深度：  从根节点到最底层节点的层数称之深度  跟节点就是第一层  叶子节点：没有子节点的节点  非终">
+  <meta name="description" content="树定义： 专业定义：  有且只有个成为根的节点；  有若干个互不相交的子树，这些子树本事也是一颗树    通俗的定义：  树是由节点和边（指针）组成；  每个节点只有一个父节点，但是可以有多个自己节点；  根节点没有父节点    专业术语：  节点、父节点、子节点、子孙、堂兄弟  深度：从根节点到最底层节点的层数称之深度  跟节点就是第一层  叶子节点：没有子节点的节点  非终端节点：实际就是非叶">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构-树">
 <meta property="og:url" content="http://example.com/2021/12/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91/index.html">
 <meta property="og:site_name" content="Disembark">
-<meta property="og:description" content="树定义： 专业定义：  有且只有个成为根的节点；  有若干个互不相交的子树，这些子树本事也是一颗树      通俗的定义：  树是由节点和边（指针）组成；  每个节点只有一个父节点，但是可以有多个自己节点；  根节点没有父节点      专业术语：  节点  父节点  子节点  子孙  堂兄弟  深度：  从根节点到最底层节点的层数称之深度  跟节点就是第一层  叶子节点：没有子节点的节点  非终">
+<meta property="og:description" content="树定义： 专业定义：  有且只有个成为根的节点；  有若干个互不相交的子树，这些子树本事也是一颗树    通俗的定义：  树是由节点和边（指针）组成；  每个节点只有一个父节点，但是可以有多个自己节点；  根节点没有父节点    专业术语：  节点、父节点、子节点、子孙、堂兄弟  深度：从根节点到最底层节点的层数称之深度  跟节点就是第一层  叶子节点：没有子节点的节点  非终端节点：实际就是非叶">
 <meta property="og:locale">
 <meta property="og:image" content="c:/Users/Lenovo/Desktop/计算机第一学期/数据结构资料/0088a78ad54d1d89c027d6dbd1d5485.jpg">
 <meta property="article:published_time" content="2021-12-07T08:57:15.000Z">
-<meta property="article:modified_time" content="2021-12-07T08:58:10.133Z">
+<meta property="article:modified_time" content="2021-12-07T09:52:19.351Z">
 <meta property="article:author" content="zc">
 <meta property="article:tag" content="数据结构-C">
 <meta name="twitter:card" content="summary">
@@ -176,82 +176,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="树定义："><a href="#树定义：" class="headerlink" title="树定义："></a>树定义：</h5><ol>
+        <h5 id="树定义："><a href="#树定义：" class="headerlink" title="树定义："></a>树定义：</h5><ul>
 <li><p>专业定义：</p>
-<ol>
-<li><p>有且只有个成为根的节点；</p>
+<p> 有且只有个成为根的节点；</p>
+<p> 有若干个互不相交的子树，这些子树本事也是一颗树</p>
 </li>
-<li><p>有若干个互不相交的子树，这些子树本事也是一颗树</p>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="2">
+</ul>
+<ul>
 <li><p>通俗的定义：</p>
-<ol>
-<li><p>树是由节点和边（指针）组成；</p>
+<p> 树是由节点和边（指针）组成；</p>
+<p> 每个节点只有一个父节点，但是可以有多个自己节点；</p>
+<p> 根节点没有父节点</p>
 </li>
-<li><p>每个节点只有一个父节点，但是可以有多个自己节点；</p>
-</li>
-<li><p>根节点没有父节点</p>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="3">
+</ul>
+<ul>
 <li><p>专业术语：</p>
-<ol>
-<li><p>节点</p>
+<p> 节点、父节点、子节点、子孙、堂兄弟</p>
+<p> 深度：从根节点到最底层节点的层数称之深度</p>
+<p> 跟节点就是第一层</p>
+<p> 叶子节点：没有子节点的节点</p>
+<p> 非终端节点：实际就是非叶子节点</p>
+<p> 度：子节点的个数</p>
 </li>
-<li><p>父节点</p>
+</ul>
+<h5 id="树的分类："><a href="#树的分类：" class="headerlink" title="树的分类："></a>树的分类：</h5><p>一般树：任意一个节点的子节点的个数都不受限制</p>
+<p>二叉树：</p>
+<p>​    任意一个节点的子节点的个数最多两个，且子节点的位置不可更改</p>
+<p>分类：</p>
+<p>​    一般二叉树</p>
+<p>​    满二叉树：在不增加树的层数的前提下，无法再多添加一个节点的二叉树就是满二叉树</p>
+<p>​    完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个节点，这样形成的二叉树就是完全二叉树</p>
+<p>森林：n个互补相交的树的集合</p>
+<h5 id="树的存储："><a href="#树的存储：" class="headerlink" title="树的存储："></a>树的存储：</h5><ul>
+<li><p>二叉树的存储：</p>
+<p>连续存储【完全二叉树】</p>
+<p>链式存储</p>
 </li>
-<li><p>子节点</p>
+<li><p>一般树的存储：</p>
 </li>
-<li><p>子孙</p>
+<li><p>森林的存储：</p>
 </li>
-<li><p>堂兄弟</p>
-</li>
-<li><p>深度：</p>
-</li>
-<li><p>从根节点到最底层节点的层数称之深度</p>
-</li>
-<li><p>跟节点就是第一层</p>
-</li>
-<li><p>叶子节点：没有子节点的节点</p>
-</li>
-<li><p>非终端节点：实际就是非叶子节点</p>
-</li>
-<li><p>度：子节点的个数</p>
-</li>
-</ol>
-</li>
-</ol>
-<h5 id="树的分类："><a href="#树的分类：" class="headerlink" title="树的分类："></a>树的分类：</h5><ol>
-<li><p>一般树：任意一个节点的子节点的个数都不受限制</p>
-</li>
-<li><p>二叉树：</p>
-<ol>
-<li>任意一个节点的子节点的个数最多两个，且子节点的位置不可更改</li>
-<li>分类：<ol>
-<li>一般二叉树</li>
-<li>满二叉树：在不增加树的层数的前提下，无法再多添加一个节点的二叉树就是满二叉树</li>
-<li>完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个节点，这样形成的二叉树就是完全二叉树</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>森林：n个互补相交的树的集合</p>
-</li>
-</ol>
-<h5 id="树的存储："><a href="#树的存储：" class="headerlink" title="树的存储："></a>树的存储：</h5><ol>
-<li>二叉树的存储：<ol>
-<li>连续存储【完全二叉树】</li>
-<li>链式存储</li>
-</ol>
-</li>
-<li>一般树的存储：</li>
-<li>森林的存储：</li>
-</ol>
+</ul>
 <img src="C:\Users\Lenovo\Desktop\计算机第一学期\数据结构资料\0088a78ad54d1d89c027d6dbd1d5485.jpg" alt="0088a78ad54d1d89c027d6dbd1d5485" style="zoom:50%;" />
 
 

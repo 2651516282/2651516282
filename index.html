@@ -309,82 +309,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="树定义："><a href="#树定义：" class="headerlink" title="树定义："></a>树定义：</h5><ol>
+        <h5 id="树定义："><a href="#树定义：" class="headerlink" title="树定义："></a>树定义：</h5><ul>
 <li><p>专业定义：</p>
-<ol>
-<li><p>有且只有个成为根的节点；</p>
+<p> 有且只有个成为根的节点；</p>
+<p> 有若干个互不相交的子树，这些子树本事也是一颗树</p>
 </li>
-<li><p>有若干个互不相交的子树，这些子树本事也是一颗树</p>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="2">
+</ul>
+<ul>
 <li><p>通俗的定义：</p>
-<ol>
-<li><p>树是由节点和边（指针）组成；</p>
+<p> 树是由节点和边（指针）组成；</p>
+<p> 每个节点只有一个父节点，但是可以有多个自己节点；</p>
+<p> 根节点没有父节点</p>
 </li>
-<li><p>每个节点只有一个父节点，但是可以有多个自己节点；</p>
-</li>
-<li><p>根节点没有父节点</p>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="3">
+</ul>
+<ul>
 <li><p>专业术语：</p>
-<ol>
-<li><p>节点</p>
+<p> 节点、父节点、子节点、子孙、堂兄弟</p>
+<p> 深度：从根节点到最底层节点的层数称之深度</p>
+<p> 跟节点就是第一层</p>
+<p> 叶子节点：没有子节点的节点</p>
+<p> 非终端节点：实际就是非叶子节点</p>
+<p> 度：子节点的个数</p>
 </li>
-<li><p>父节点</p>
+</ul>
+<h5 id="树的分类："><a href="#树的分类：" class="headerlink" title="树的分类："></a>树的分类：</h5><p>一般树：任意一个节点的子节点的个数都不受限制</p>
+<p>二叉树：</p>
+<p>​    任意一个节点的子节点的个数最多两个，且子节点的位置不可更改</p>
+<p>分类：</p>
+<p>​    一般二叉树</p>
+<p>​    满二叉树：在不增加树的层数的前提下，无法再多添加一个节点的二叉树就是满二叉树</p>
+<p>​    完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个节点，这样形成的二叉树就是完全二叉树</p>
+<p>森林：n个互补相交的树的集合</p>
+<h5 id="树的存储："><a href="#树的存储：" class="headerlink" title="树的存储："></a>树的存储：</h5><ul>
+<li><p>二叉树的存储：</p>
+<p>连续存储【完全二叉树】</p>
+<p>链式存储</p>
 </li>
-<li><p>子节点</p>
+<li><p>一般树的存储：</p>
 </li>
-<li><p>子孙</p>
+<li><p>森林的存储：</p>
 </li>
-<li><p>堂兄弟</p>
-</li>
-<li><p>深度：</p>
-</li>
-<li><p>从根节点到最底层节点的层数称之深度</p>
-</li>
-<li><p>跟节点就是第一层</p>
-</li>
-<li><p>叶子节点：没有子节点的节点</p>
-</li>
-<li><p>非终端节点：实际就是非叶子节点</p>
-</li>
-<li><p>度：子节点的个数</p>
-</li>
-</ol>
-</li>
-</ol>
-<h5 id="树的分类："><a href="#树的分类：" class="headerlink" title="树的分类："></a>树的分类：</h5><ol>
-<li><p>一般树：任意一个节点的子节点的个数都不受限制</p>
-</li>
-<li><p>二叉树：</p>
-<ol>
-<li>任意一个节点的子节点的个数最多两个，且子节点的位置不可更改</li>
-<li>分类：<ol>
-<li>一般二叉树</li>
-<li>满二叉树：在不增加树的层数的前提下，无法再多添加一个节点的二叉树就是满二叉树</li>
-<li>完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个节点，这样形成的二叉树就是完全二叉树</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>森林：n个互补相交的树的集合</p>
-</li>
-</ol>
-<h5 id="树的存储："><a href="#树的存储：" class="headerlink" title="树的存储："></a>树的存储：</h5><ol>
-<li>二叉树的存储：<ol>
-<li>连续存储【完全二叉树】</li>
-<li>链式存储</li>
-</ol>
-</li>
-<li>一般树的存储：</li>
-<li>森林的存储：</li>
-</ol>
+</ul>
 <img src="C:\Users\Lenovo\Desktop\计算机第一学期\数据结构资料\0088a78ad54d1d89c027d6dbd1d5485.jpg" alt="0088a78ad54d1d89c027d6dbd1d5485" style="zoom:50%;" />
 
 
@@ -461,61 +426,52 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="队列："><a href="#队列：" class="headerlink" title="队列："></a>队列：</h1><h6 id="定义：一种可以实现”先进先出”的存储结构"><a href="#定义：一种可以实现”先进先出”的存储结构" class="headerlink" title="定义：一种可以实现”先进先出”的存储结构"></a>定义：一种可以实现”先进先出”的存储结构</h6><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20211103165900671.png" alt="image-20211103165900671"></p>
-<ol>
-<li><h4 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h4></li>
-</ol>
-<p>​            链式队列 – 用链表实现</p>
+<h4 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h4><p>​            链式队列 – 用链表实现</p>
 <p>​            静态队列 – 用数组实现</p>
 <p>​                静态队列通常都必须是循环队列</p>
-<ol start="2">
-<li><h4 id="循环队列："><a href="#循环队列：" class="headerlink" title="循环队列："></a>循环队列：</h4></li>
-<li><h5 id="静态队列为什么必须是循环队列？"><a href="#静态队列为什么必须是循环队列？" class="headerlink" title="静态队列为什么必须是循环队列？"></a>静态队列为什么必须是循环队列？</h5></li>
-<li><h5 id="循环队列需要几个参数来确定和含义？"><a href="#循环队列需要几个参数来确定和含义？" class="headerlink" title="循环队列需要几个参数来确定和含义？"></a><strong>循环队列需要几个参数来确定和含义？</strong></h5><ol>
-<li><h6 id="需要两个参数来确定；"><a href="#需要两个参数来确定；" class="headerlink" title="需要两个参数来确定；"></a>需要两个参数来确定；</h6><ol>
-<li>font<ol start="2">
+<h4 id="循环队列："><a href="#循环队列：" class="headerlink" title="循环队列："></a>循环队列：</h4><h5 id="静态队列为什么必须是循环队列？"><a href="#静态队列为什么必须是循环队列？" class="headerlink" title="静态队列为什么必须是循环队列？"></a>静态队列为什么必须是循环队列？</h5><h5 id="循环队列需要几个参数来确定和含义？"><a href="#循环队列需要几个参数来确定和含义？" class="headerlink" title="循环队列需要几个参数来确定和含义？"></a>循环队列需要几个参数来确定和含义？</h5><h6 id="需要两个参数来确定；"><a href="#需要两个参数来确定；" class="headerlink" title="需要两个参数来确定；"></a>需要两个参数来确定；</h6><ul>
+<li>font</li>
 <li>rear</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><h6 id="2个参数不同场合有不同的含义"><a href="#2个参数不同场合有不同的含义" class="headerlink" title="2个参数不同场合有不同的含义"></a>2个参数不同场合有不同的含义</h6><ol>
+</ul>
+<h6 id="2个参数不同场合有不同的含义"><a href="#2个参数不同场合有不同的含义" class="headerlink" title="2个参数不同场合有不同的含义"></a>2个参数不同场合有不同的含义</h6><ul>
 <li><p>队列初始化：font 和 rear 的值都是零</p>
 </li>
 <li><p>队列非空：</p>
-<ol>
-<li>font 代表队列的第一个元素；<ol start="2">
-<li>rear代表队列的最后一个有效元素的下一个元素；</li>
-</ol>
 </li>
-</ol>
+<li><p>font 代表队列的第一个元素；</p>
+</li>
+<li><p>rear代表队列的最后一个有效元素的下一个元素；</p>
 </li>
 <li><p>队列空：font 和rear 的值相等，但不一定是零</p>
 </li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="3">
-<li><h5 id="循环队列入队伪算法？"><a href="#循环队列入队伪算法？" class="headerlink" title="循环队列入队伪算法？"></a>循环队列入队伪算法？</h5><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20211108165808304.png" alt="image-20211108165808304" style="zoom:50%;" />
+</ul>
+<h5 id="循环队列入队伪算法？"><a href="#循环队列入队伪算法？" class="headerlink" title="循环队列入队伪算法？"></a>循环队列入队伪算法？</h5><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20211108165808304.png" alt="image-20211108165808304" style="zoom:50%;" />
 
-<ol>
-<li><h6 id="将值存入r所代表的位置"><a href="#将值存入r所代表的位置" class="headerlink" title="将值存入r所代表的位置"></a>将值存入r所代表的位置</h6></li>
-<li><h6 id="错误写法：-rear-rear-1；"><a href="#错误写法：-rear-rear-1；" class="headerlink" title="错误写法： rear = rear +1；"></a>错误写法： rear = rear +1；</h6><h6 id="正确写法：rear-（-rear-1-）-数组长度"><a href="#正确写法：rear-（-rear-1-）-数组长度" class="headerlink" title="正确写法：rear = （ rear + 1 ） % 数组长度"></a>正确写法：rear = （ rear + 1 ） % 数组长度</h6></li>
-</ol>
+<ul>
+<li><h6 id="将值存入r所代表的位置"><a href="#将值存入r所代表的位置" class="headerlink" title="将值存入r所代表的位置"></a>将值存入r所代表的位置</h6><ul>
+<li><h6 id="错误写法：-rear-rear-1；"><a href="#错误写法：-rear-rear-1；" class="headerlink" title="错误写法： rear = rear +1；"></a>错误写法： rear = rear +1；</h6></li>
+<li><h6 id="正确写法：rear-（-rear-1-）-数组长度"><a href="#正确写法：rear-（-rear-1-）-数组长度" class="headerlink" title="正确写法：rear = （ rear + 1 ） % 数组长度"></a>正确写法：rear = （ rear + 1 ） % 数组长度</h6></li>
+</ul>
 </li>
 <li><h5 id="循环队列出队伪算法？front-（-front-1-）-数组长度"><a href="#循环队列出队伪算法？front-（-front-1-）-数组长度" class="headerlink" title="循环队列出队伪算法？front = （ front + 1 ） % 数组长度"></a>循环队列出队伪算法？front = （ front + 1 ） % 数组长度</h5></li>
-<li><h5 id="如何判断循环队列是否为空？"><a href="#如何判断循环队列是否为空？" class="headerlink" title="如何判断循环队列是否为空？"></a>如何判断循环队列是否为空？</h5><p>​    如果 front 和 rear 的值相等，则该队列就一定为空。</p>
+<li><h5 id="如何判断循环队列是否为空？"><a href="#如何判断循环队列是否为空？" class="headerlink" title="如何判断循环队列是否为空？"></a>如何判断循环队列是否为空？</h5><ul>
+<li>​    如果 front 和 rear 的值相等，则该队列就一定为空。</li>
+</ul>
 </li>
-<li><h5 id="如何判断循环队列是否已满？（front-的值可能比rear-大-，也完全有可能比rear-小，当然也可能相等）"><a href="#如何判断循环队列是否已满？（front-的值可能比rear-大-，也完全有可能比rear-小，当然也可能相等）" class="headerlink" title="如何判断循环队列是否已满？（front 的值可能比rear 大 ，也完全有可能比rear 小，当然也可能相等）"></a>如何判断循环队列是否已满？（<em>front 的值可能比rear 大 ，也完全有可能比rear 小，当然也可能相等</em>）</h5><p>两种方式：</p>
-<p>​        1.多增加一个标志参数；</p>
-<p>​        2.少用一个元素； </p>
-   <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">如果r和f的值紧挨着，则队列已满</span><br><span class="line"><span class="keyword">if</span>( (r+<span class="number">1</span>)%数组长度 == f )&#123;</span><br><span class="line">	满 </span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	不满 </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-
-
+<li><h5 id="如何判断循环队列是否已满？（front-的值可能比rear-大-，也完全有可能比rear-小，当然也可能相等）"><a href="#如何判断循环队列是否已满？（front-的值可能比rear-大-，也完全有可能比rear-小，当然也可能相等）" class="headerlink" title="如何判断循环队列是否已满？（front 的值可能比rear 大 ，也完全有可能比rear 小，当然也可能相等）"></a>如何判断循环队列是否已满？（<em>front 的值可能比rear 大 ，也完全有可能比rear 小，当然也可能相等</em>）</h5><ul>
+<li>两种方式：<ul>
+<li>​        多增加一个标志参数；</li>
+<li>​        少用一个元素； </li>
+</ul>
 </li>
-</ol>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">如果r和f的值紧挨着，则队列已满</span><br><span class="line"><span class="keyword">if</span>( (r+<span class="number">1</span>)%数组长度 == f )&#123;</span><br><span class="line">	满 </span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	不满 </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>   代码实现：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Queue</span>&#123;</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> *pBata;</span><br><span class="line">	<span class="keyword">int</span> front;</span><br><span class="line">	<span class="keyword">int</span> rear;</span><br><span class="line">&#125;QUEUE;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(QUEUE *)</span></span>;  <span class="comment">// 初始化</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">en_queue</span><span class="params">(QUEUE *,<span class="keyword">int</span>)</span></span>;  <span class="comment">// 入队 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse_queue</span><span class="params">(QUEUE *)</span> </span>;   <span class="comment">// 参数的意思是 遍历哪个队列 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span>  <span class="title">full_queue</span><span class="params">(QUEUE *)</span></span>;		<span class="comment">// 判断是否满了 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">out_queue</span><span class="params">(QUEUE *,<span class="keyword">int</span> *)</span></span>; </span><br><span class="line"><span class="function"><span class="keyword">bool</span>  <span class="title">emput_queue</span><span class="params">(QUEUE *)</span> </span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	QUEUE Q;</span><br><span class="line">	init(&amp;Q ); </span><br><span class="line">	</span><br><span class="line">	en_queue(&amp;Q,<span class="number">1</span>); </span><br><span class="line">	en_queue(&amp;Q,<span class="number">2</span>);</span><br><span class="line">	en_queue(&amp;Q,<span class="number">3</span>);</span><br><span class="line">	en_queue(&amp;Q,<span class="number">4</span>);</span><br><span class="line">	en_queue(&amp;Q,<span class="number">5</span>);</span><br><span class="line">	en_queue(&amp;Q,<span class="number">6</span>);</span><br><span class="line">	en_queue(&amp;Q,<span class="number">7</span>);</span><br><span class="line">	en_queue(&amp;Q,<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	traverse_queue(&amp;Q );</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(QUEUE *pQ)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	pQ-&gt;pBata = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) *<span class="number">6</span>);</span><br><span class="line">	<span class="keyword">if</span>(<span class="literal">NULL</span> == pQ-&gt;pBata)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;分配失败&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">-1</span>); </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 把 r和 f 初始化   </span></span><br><span class="line">	pQ-&gt;front = <span class="number">0</span>;    </span><br><span class="line">	pQ-&gt;rear = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span>  <span class="title">full_queue</span><span class="params">(QUEUE *pQ)</span></span>&#123;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>( (pQ-&gt;rear+<span class="number">1</span>)%<span class="number">6</span> == pQ-&gt;front )&#123;  <span class="comment">// 如果 r = 5  f = 0  r+1 = 6  6%6 = 0    r == f  : return   </span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">en_queue</span><span class="params">(QUEUE *pQ ,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(full_queue(pQ))&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">		</span><br><span class="line">		pQ-&gt;pBata[pQ-&gt;rear] = val;</span><br><span class="line">		</span><br><span class="line"><span class="comment">//		pQ-&gt;pBata[pQ-&gt;rear] = (pQ-&gt;rear + 1) % 6;</span></span><br><span class="line">		pQ-&gt;rear = (pQ-&gt;rear + <span class="number">1</span>) % <span class="number">6</span>;</span><br><span class="line">		 </span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse_queue</span><span class="params">(QUEUE *pQ )</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> i  = pQ-&gt;front;</span><br><span class="line">	<span class="keyword">while</span>( i != pQ-&gt;rear)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,pQ-&gt;pBata[i]);</span><br><span class="line">		i = (i+<span class="number">1</span>) %<span class="number">6</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span>  <span class="title">emput_queue</span><span class="params">(QUEUE *pQ)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(pQ-&gt;front == pQ-&gt;rear)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">out_queue</span><span class="params">(QUEUE *pQ ,<span class="keyword">int</span> * pVal)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>( emput_queue(pQ))&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		</span><br><span class="line">		*pVal = pQ-&gt;pBata[pQ-&gt;front];</span><br><span class="line">		pQ-&gt;front = (pQ-&gt;front +<span class="number">1</span> ) %<span class="number">6</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125; </span><br><span class="line">	 </span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
 <p>​                    </p>
 
       
